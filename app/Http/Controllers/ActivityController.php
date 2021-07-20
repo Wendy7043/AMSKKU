@@ -89,15 +89,19 @@ class ActivityController extends Controller
     public function submitCreatActivityDormitory_Director(Request $request)
     {
         $data = new Activity;
-        if ($request->file('file')) {
-            $file = $request->file('file');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('storage/', $filename);
-            $data->file = $filename;
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $activityFile = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $activityFile);
+            $data->activityFile = $activityFile;
         }
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $data->status = 1;
+        $data->activityName = $request->activityName;
+        $data->activityType = $request->activityType;
+        $data->activityPlace = $request->activityPlace;
+        $data->activityResponsible = $request->activityResponsible;
+        $data->activityStartDate = $request->activityStartDate;
+        $data->activityEndDate = $request->activityEndDate;
+        $data->activityStatus = 1;
         $data->save();
         return redirect()->back();
     }
@@ -105,19 +109,23 @@ class ActivityController extends Controller
     public function submitCreatActivityDormitory_Chairman(Request $request)
     {
         $data = new Activity;
-        if ($request->file('file')) {
-            $file = $request->file('file');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('storage/', $filename);
-            $data->file = $filename;
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $activityFile = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $activityFile);
+            $data->activityFile = $activityFile;
         }
-        $data->title = $request->title;
-        $data->description = $request->description;
-        $data->status = 2;
+        $data->activityName = $request->activityName;
+        $data->activityType = $request->activityType;
+        $data->activityPlace = $request->activityPlace;
+        $data->activityResponsible = $request->activityResponsible;
+        $data->activityStartDate = $request->activityStartDate;
+        $data->activityEndDate = $request->activityEndDate;
+        $data->activityStatus = 2;
         $data->save();
         return redirect()->back();
     }
-
+ 
 
 
     public function manageActivityDormitory_Director()
