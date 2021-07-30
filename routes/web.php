@@ -25,7 +25,8 @@ Route::get('Dormitory_Chairman/home', [App\Http\Controllers\HomeController::clas
 Route::get('Dormitory_Counselor/home', [App\Http\Controllers\HomeController::class, 'Dormitory_Counselor'])->name('Dormitory_Counselor')->middleware('role');
 Route::get('Head_Dormitory_Service/home', [App\Http\Controllers\HomeController::class, 'Head_Dormitory_Service'])->name('Head_Dormitory_Service')->middleware('role');
 Route::get('Head_Information_Unit/home', [App\Http\Controllers\HomeController::class, 'Head_Information_Unit'])->name('Head_Information_Unit')->middleware('role');
-Route::get('Director_Dormitory_ServiceDivision/home', [App\Http\Controllers\HomeController::class, 'Director_Dormitory_ServiceDivision'])->name('Director_Dormitory_ServiceDivision')->middleware('role');
+Route::get('Director_Dormitory_Service_Division/home', [App\Http\Controllers\HomeController::class, 'Director_Dormitory_Service_Division'])->name('Director_Dormitory_Service_Division')->middleware('role');
+
 
 Route::get('/Dormitory_Director/createActivity',[App\Http\Controllers\ActivityController::class, 'creatActivityDormitory_Director'])->name('creatActivityDormitory_Director');
 Route::get('/Dormitory_Chairman/createActivity',[App\Http\Controllers\ActivityController::class, 'creatActivityDormitory_Chairman'])->name('creatActivityDormitory_Chairman');

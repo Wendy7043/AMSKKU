@@ -22,6 +22,7 @@ class CreateActivitiesTable extends Migration
             $table->string('activityEndDate')->nullable();
             $table->string('activityScore')->nullable();
             $table->string('activityStatus')->nullable();
+            $table->string('activityStatusName')->nullable();
             $table->string('activityFile')->nullable();
             $table->string('activityAdvice')->nullable();
             $table->string('activityResponsible')->nullable();
