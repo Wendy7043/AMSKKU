@@ -13,11 +13,14 @@
                             <form action="/Director_Dormitory_Service_Division/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
                                 <div class="col-sm-10">
                                     {{csrf_field()}}
-                                    <input type="hidden" name="id" value="{{$Activity->id}}"><br>
-                                    <input type="hidden" name="status" value="{{$Activity->id}}"><br>
-                                    <input type="text" name="title" placeholder="ชื่อกิจกรรม" value="{{$Activity->title}}" readonly><br>
-                                    <input type="text" name="description" placeholder="รายละเอียดกิจกรรม" value="{{$Activity->description}}" readonly><br>
-                                    <input type="file" name="file" value="{{$Activity->file}}"><br>
+                                    <input type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
+                                    <input type="text" name="activityName" value="{{$Activity->activityName}}" readonly><br>
+                                    <input type="text" name="activityType"  value="{{$Activity->activityType}}" readonly><br>
+                                    <input type="text" name="activityPlace" value="{{$Activity->activityPlace}}" readonly><br>
+                                    <input type="text" name="activityResponsible" value="{{$Activity->activityResponsible}}" readonly><br>
+                                    <input type="text" name="activityStartDate" value="{{$Activity->activityStartDate}}" readonly><br>
+                                    <input type="text" name="activityEndDate" value="{{$Activity->activityEndDate}}" readonly><br>
+                                    <input type="file" name="activityFile" value="{{$Activity->activityFile}}"><br>
                                     <input type="submit" value="Submit">
                                 </div>
                             </form>

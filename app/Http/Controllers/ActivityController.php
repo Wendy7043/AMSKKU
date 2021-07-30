@@ -140,118 +140,110 @@ class ActivityController extends Controller
     }
 
 
-    public function approveDormitory_Chairman($id)
+    public function approveDormitory_Chairman($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.approveActivity.approveDormitory_Chairman', compact('Activity'));
     }
-    public function approveDormitory_Counselor($id)
+    public function approveDormitory_Counselor($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.approveActivity.approveDormitory_Counselor', compact('Activity'));
     }
-    public function approveHead_Dormitory_Service($id)
+    public function approveHead_Dormitory_Service($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.approveActivity.approveHead_Dormitory_Service', compact('Activity'));
     }
-    public function approveDirector_Dormitory_Service_Division($id)
+    public function approveDirector_Dormitory_Service_Division($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.approveActivity.approveDirector_Dormitory_Service_Division', compact('Activity'));
     }
 
     public function submitApproveDormitory_Chairman(Request $request)
     {
-        if ($request->file('file')) {
-            $file = $request->file('file');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('storage/', $filename);
-            DB::table('activities')->where('id', $request->id)->update([
-                'file' => $filename
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
             ]);
         }
         $status =2;
-        DB::table('activities')->where('id', $request->id)->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => $status
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityStatus' => $status
         ]);
         return back()->with('post_update', 'อนุมัติสำเร็จแล้ว');
     }
 
     public function submitApproveDormitory_Counselor(Request $request)
     {
-        if ($request->file('file')) {
-            $file = $request->file('file');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('storage/', $filename);
-            DB::table('activities')->where('id', $request->id)->update([
-                'file' => $filename
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
             ]);
         }
         $status =3;
-        DB::table('activities')->where('id', $request->id)->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => $status
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityStatus' => $status
         ]);
         return back()->with('post_update', 'อนุมัติสำเร็จแล้ว');
     }
 
     public function submitApproveHead_Dormitory_Service(Request $request)
     {
-        if ($request->file('file')) {
-            $file = $request->file('file');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('storage/', $filename);
-            DB::table('activities')->where('id', $request->id)->update([
-                'file' => $filename
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
             ]);
         }
         $status =4;
-        DB::table('activities')->where('id', $request->id)->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => $status
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityStatus' => $status
         ]);
         return back()->with('post_update', 'อนุมัติสำเร็จแล้ว');
     }
     
     public function submitApproveDirector_Dormitory_Service_Division (Request $request)
     {
-        if ($request->file('file')) {
-            $file = $request->file('file');
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('storage/', $filename);
-            DB::table('activities')->where('id', $request->id)->update([
-                'file' => $filename
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
             ]);
         }
         $status =5;
-        DB::table('activities')->where('id', $request->id)->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => $status
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityStatus' => $status
         ]);
         return back()->with('post_update', 'อนุมัติสำเร็จแล้ว');
     }
 
-    public function userConductActivityDormitory_Director($id)
+    public function userConductActivityDormitory_Director($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.ConductActivity.userConductActivityDormitory_Director', compact('Activity'));
     }
 
-    public function userConductActivityDormitory_Chairman($id)
+    public function userConductActivityDormitory_Chairman($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.ConductActivity.userConductActivityDormitory_Chairman', compact('Activity'));
     }
 
-    public function scoreConductActivityDormitory_Chairman($id)
+    public function scoreConductActivityDormitory_Chairman($activityId)
     {
-        $Activity = DB::table('activities')->where('id', $id)->first();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.ConductActivity.scoreConductActivityDormitory_Chairman', compact('Activity'));
     }
     
