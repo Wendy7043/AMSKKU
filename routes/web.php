@@ -79,17 +79,17 @@ Route::get('/Head_Information_Unit/manageUserAll', [App\Http\Controllers\UserCon
 Route::get('/files/download/{file}', [App\Http\Controllers\ActivityController::class, 'download'])->name('download');
 
 
-Route::get('/Dormitory_Chairman/approveActivity/approve/{id}', [App\Http\Controllers\ActivityController::class, 'approveDormitory_Chairman'])->name('approveDormitory_Chairman');
-Route::get('/Dormitory_Chairman/approveActivity/notapprove/{id}', [App\Http\Controllers\ActivityController::class, 'notapproveDormitory_Chairman'])->name('notapproveDormitory_Chairman');
+Route::get('/Dormitory_Chairman/approveActivity/approve/{activityId}', [App\Http\Controllers\ActivityController::class, 'approveDormitory_Chairman'])->name('approveDormitory_Chairman');
+Route::get('/Dormitory_Chairman/approveActivity/notapprove/{activityId}', [App\Http\Controllers\ActivityController::class, 'notapproveDormitory_Chairman'])->name('notapproveDormitory_Chairman');
 
-Route::get('/Dormitory_Counselor/approveActivity/approve/{id}', [App\Http\Controllers\ActivityController::class, 'approveDormitory_Counselor'])->name('approveDormitory_Counselor');
-Route::get('/Dormitory_Counselor/approveActivity/notapprove/{id}', [App\Http\Controllers\ActivityController::class, 'notapproveDormitory_Counselor'])->name('notapproveDormitory_Counselor');
+Route::get('/Dormitory_Counselor/approveActivity/approve/{activityId}', [App\Http\Controllers\ActivityController::class, 'approveDormitory_Counselor'])->name('approveDormitory_Counselor');
+Route::get('/Dormitory_Counselor/approveActivity/notapprove/{activityId}', [App\Http\Controllers\ActivityController::class, 'notapproveDormitory_Counselor'])->name('notapproveDormitory_Counselor');
 
-Route::get('/Head_Dormitory_Service/approveActivity/approve/{id}', [App\Http\Controllers\ActivityController::class, 'approveHead_Dormitory_Service'])->name('approveHead_Dormitory_Service');
-Route::get('/Head_Dormitory_Service/approveActivity/notapprove/{id}', [App\Http\Controllers\ActivityController::class, 'notaHead_Dormitory_Service'])->name('notaHead_Dormitory_Service');
+Route::get('/Head_Dormitory_Service/approveActivity/approve/{activityId}', [App\Http\Controllers\ActivityController::class, 'approveHead_Dormitory_Service'])->name('approveHead_Dormitory_Service');
+Route::get('/Head_Dormitory_Service/approveActivity/notapprove/{activityId}', [App\Http\Controllers\ActivityController::class, 'notaHead_Dormitory_Service'])->name('notaHead_Dormitory_Service');
 
-Route::get('/Director_Dormitory_Service_Division/approveActivity/approve/{id}', [App\Http\Controllers\ActivityController::class, 'approveDirector_Dormitory_Service_Division'])->name('approveDirector_Dormitory_Service_Division');
-Route::get('/Director_Dormitory_Service_Division/approveActivity/notapprove/{id}', [App\Http\Controllers\ActivityController::class, 'notDirector_Dormitory_Service_Division'])->name('notDirector_Dormitory_Service_Division');
+Route::get('/Director_Dormitory_Service_Division/approveActivity/approve/{activityId}', [App\Http\Controllers\ActivityController::class, 'approveDirector_Dormitory_Service_Division'])->name('approveDirector_Dormitory_Service_Division');
+Route::get('/Director_Dormitory_Service_Division/approveActivity/notapprove/{activityId}', [App\Http\Controllers\ActivityController::class, 'notDirector_Dormitory_Service_Division'])->name('notDirector_Dormitory_Service_Division');
 
 
 
@@ -109,9 +109,9 @@ Route::post('/Director_Dormitory_Service_Division/approveActivity/notapprove/sub
 Route::post('/Dormitory_Director/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreatActivityDormitory_Director'])->name('submitCreatActivityDormitory_Director');
 Route::post('/Dormitory_Chairman/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreatActivityDormitory_Chairman'])->name('submitCreatActivityDormitory_Chairman');
 
-Route::get('/Dormitory_Director/conductActivity/user/{id}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Director'])->name('userConductActivityDormitory_Director');
-Route::get('/Dormitory_Chairman/conductActivity/user/{id}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Chairman'])->name('userConductActivityDormitory_Chairman');
+Route::get('/Dormitory_Director/conductActivity/user/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Director'])->name('userConductActivityDormitory_Director');
+Route::get('/Dormitory_Chairman/conductActivity/user/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Chairman'])->name('userConductActivityDormitory_Chairman');
 
-Route::get('/Dormitory_Chairman/conductActivity/score/{id}', [App\Http\Controllers\ActivityController::class, 'scoreConductActivityDormitory_Chairman'])->name('scoreConductActivityDormitory_Chairman');
+Route::get('/Dormitory_Chairman/conductActivity/score/{activityId}', [App\Http\Controllers\ActivityController::class, 'scoreConductActivityDormitory_Chairman'])->name('scoreConductActivityDormitory_Chairman');
 
 Auth::routes();
