@@ -50,24 +50,25 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            if (auth()->user()->role == 1) {
+            if (auth()->user()->role == 'Student') {
                 return redirect()->route('Student');
-            } elseif (auth()->user()->role == 2) {
+            } elseif (auth()->user()->role == 'Dormitory_Director') {
                 return redirect()->route('Dormitory_Director');
-            } elseif (auth()->user()->role == 3) {
+            } elseif (auth()->user()->role == 'Dormitory_Chairman') {
                 return redirect()->route('Dormitory_Chairman');
-            } elseif (auth()->user()->role == 4) {
+            } elseif (auth()->user()->role == 'Dormitory_Counselor') {
                 return redirect()->route('Dormitory_Counselor');
-            } elseif (auth()->user()->role == 5) {
+            } elseif (auth()->user()->role == 'Head_Dormitory_Service') {
                 return redirect()->route('Head_Dormitory_Service');
-            } elseif (auth()->user()->role == 6) {
+            } elseif (auth()->user()->role == 'Director_Dormitory_Service_Division') {
+                return redirect()->route('Director_Dormitory_Service_Division');
+            } elseif (auth()->user()->role == 'Head_Information_Unit') {
                 return redirect()->route('Head_Information_Unit');
-            } elseif (auth()->user()->role == 7) {
-                return redirect()->route('Director_Dormitory_ServiceDivision');
             } else {
                 return redirect()->route('home');
             }
         }
-        return redirect()->route('login')->with('error', 'email-address and password wrong');
+        return redirect()->route('login')->with('error', "ล็อกอินไม่สำเร็จ");
     }
+    
 }

@@ -46,7 +46,7 @@ class HomeController extends Controller
     {
         return view('Home.Head_Information_Unit');
     }
-    public function Director_Dormitory_ServiceDivision()
+    public function Director_Dormitory_Service_Division()
     {
         return view('Home.Director_Dormitory_Service_Division');
     }
