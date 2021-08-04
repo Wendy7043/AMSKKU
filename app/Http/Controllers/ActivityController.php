@@ -161,6 +161,32 @@ class ActivityController extends Controller
         return view('auth.approveActivity.approveDirector_Dormitory_Service_Division', compact('Activity'));
     }
 
+
+
+    public function notapproveDormitory_Chairman($activityId)
+    {
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.approveActivity.notApproveDormitory_Chairman', compact('Activity'));
+    }
+    public function notapproveDormitory_Counselor($activityId)
+    {
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.approveActivity.notApproveDormitory_Counselor', compact('Activity'));
+    }
+    public function notapproveHead_Dormitory_Service($activityId)
+    {
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.approveActivity.notApproveHead_Dormitory_Service', compact('Activity'));
+    }
+    public function notapproveDirector_Dormitory_Service_Division($activityId)
+    {
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.approveActivity.notApproveDirector_Dormitory_Service_Division', compact('Activity'));
+    }
+
+
+
+
     public function submitApproveDormitory_Chairman(Request $request)
     {
         if ($request->file('activityFile')) {

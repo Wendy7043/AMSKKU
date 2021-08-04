@@ -10,21 +10,35 @@
                 <div class="card-body">
                     <div class="mb-3 row">
                         <table class="table" border="1">
-                            <thead>
+                        <thead>
                                 <tr>
-                                    <th>ลำดับ</th>
-                                    <th>ชื่อกิจกรรม</th>
-                                    <th>คำอธิบาย</th>
-                                    <th>สถานะ</th>
+                                    <th>รหัสกิจกรรม</th>
+                                    <th>ชื่อโครงการ</th>
+                                    <th>ลักษณะโครงการ</th>
+                                    <th>สถานที่ปฏิบัติงาน</th>
+                                    <th>หน่วยงานที่รับผิดชอบโครงการ</th>
+                                    <th>วันที่เริ่มจัด</th>
+                                    <th>ถึงวันที่</th>
+                                    <th>เอกสารประกอบโครงการ</th>
+                                    <th>สถานะโครงการ</th>
+                                    <th>ดำเนินการ</th>
                                 </tr>
                             </thead>
                             @foreach($file as $key=>$data)
                             <tbody>
                                 <tr>
-                                    <td>{{++$key}}</td>
-                                    <td>{{$data->title}}</td>
-                                    <td>{{$data->description}}</td>
-                                    <td>{{$data->status}}</td>
+                                <td>{{$data->activityId}}</td>
+                                    <td>{{$data->activityName}}</td>
+                                    <td>{{$data->activityType}}</td>
+                                    <td>{{$data->activityPlace}}</td>
+                                    <td>{{$data->activityResponsible}}</td>
+                                    <td>{{$data->activityStartDate}}</td>
+                                    <td>{{$data->activityEndDate}}</td>
+                                    <td><a href="/files/download/{{$data->file}}">Download</a></td>
+                                    <td>ไม่อนุมัติ</td>
+                                    <td><a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a> |
+                                   <a href="/Dormitory_Chairman/editActivity/{{$data->activityId}}">แก้ไขกิจกรรม</a>|
+                                   <a href="/Dormitory_Chairman/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a></td>
 
 
 
