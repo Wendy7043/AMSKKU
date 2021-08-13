@@ -35,7 +35,7 @@
                                     <td>{{$data->activityStartDate}}</td>
                                     <td>{{$data->activityEndDate}}</td>
                                     <td><a href="/files/download/{{$data->file}}">Download</a></td>
-                                    <td>ไม่อนุมัติ</td>
+                                    <td>{{$data->activityStatusName}}</td>
                                     <td><a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a> |
                                    <a href="/Dormitory_Chairman/editActivity/{{$data->activityId}}">แก้ไข</a>|
                                    <a href="/Dormitory_Chairman/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a></td>

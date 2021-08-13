@@ -10,7 +10,7 @@
 
                     <div class="row">
                         <div class="col-6">
-                            <form action="/Dormitory_Chairman/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
+                            <form action="/Dormitory_Chairman/approveActivity/notapprove/submit" method="POST" enctype="multipart/form-data">
                                 <div class="col-sm-10">
                                     {{csrf_field()}}
                                     <input type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
@@ -20,7 +20,8 @@
                                     <input type="text" name="activityResponsible" value="{{$Activity->activityResponsible}}" readonly><br>
                                     <input type="text" name="activityStartDate" value="{{$Activity->activityStartDate}}" readonly><br>
                                     <input type="text" name="activityEndDate" value="{{$Activity->activityEndDate}}" readonly><br>
-                                    <input type="file" name="activityFile" value="{{$Activity->activityFile}}"><br>
+                                    <label for="exampleFormControlTextarea1">เหตุผลที่ไม่อนุมัติ</label>
+                                    <textarea class="form-control" name="activityAdvice" rows="3"></textarea>
                                     <input type="submit" value="Submit">
                                 </div>
                             </form>
