@@ -101,6 +101,8 @@ class ActivityController extends Controller
         $data->activityResponsible = $request->activityResponsible;
         $data->activityStartDate = $request->activityStartDate;
         $data->activityEndDate = $request->activityEndDate;
+        $data->activityTarget = $request->activityTarget;
+        $data->activityBudget = $request->activityBudget;
         $data->activityStatus = 1;
         $data->activityStatusName ='รอประธานหอพักอนุมัติ';
         $data->save();
@@ -122,6 +124,8 @@ class ActivityController extends Controller
         $data->activityResponsible = $request->activityResponsible;
         $data->activityStartDate = $request->activityStartDate;
         $data->activityEndDate = $request->activityEndDate;
+        $data->activityTarget = $request->activityTarget;
+        $data->activityBudget = $request->activityBudget;
         $data->activityStatus = 2;
         $data->activityStatusName ='รอที่ปรึกษาหอพักอนุมัติ';
         $data->save();
@@ -136,9 +140,9 @@ class ActivityController extends Controller
         return view('auth.Activity.manageActivityDormitory_Director', compact('file'));
     }
 
-    public function download($file)
+    public function download($activityFile)
     {
-        return response()->download('storage/' . $file);
+        return response()->download('storage/' . $activityFile);
     }
 
 

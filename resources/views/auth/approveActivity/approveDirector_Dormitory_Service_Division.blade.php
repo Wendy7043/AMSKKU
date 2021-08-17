@@ -20,6 +20,8 @@
                                     <input type="text" name="activityResponsible" value="{{$Activity->activityResponsible}}" readonly><br>
                                     <input type="text" name="activityStartDate" value="{{$Activity->activityStartDate}}" readonly><br>
                                     <input type="text" name="activityEndDate" value="{{$Activity->activityEndDate}}" readonly><br>
+                                    <input type="text" name="activityTarget" value="{{$Activity->activityTarget}}" readonly><br>
+                                    <input type="text" name="activityBudget" value="{{$Activity->activityBudget}}"><br>
                                     <input type="file" name="activityFile" value="{{$Activity->activityFile}}"><br>
                                     <input type="submit" value="Submit">
                                 </div>

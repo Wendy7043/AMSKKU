@@ -19,6 +19,8 @@
                                     ตั้งแต่วันที่<br>
                                     <input type="text" name="activityStartDate" placeholder="วันที่"><br>ถึง<br>
                                     <input type="text" name="activityEndDate" placeholder="วันที่"><br>
+                                    <input type="text" name="activityTarget" placeholder="จำนวนเป้าหมายผู้เข้าร่วมโครงการ"><br>
+                                    <input type="text" name="activityBudget" placeholder="งบประมาณที่ใช้ดำเนินโครงการ"><br>
                                     <input type="file" name="activityFile">เอกสารประกอบโครงการ<br>
                                     <input type="submit" value="Submit">
                                 </div>

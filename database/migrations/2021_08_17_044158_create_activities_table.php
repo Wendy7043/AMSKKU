@@ -26,6 +26,8 @@ class CreateActivitiesTable extends Migration
             $table->string('activityFile')->nullable();
             $table->string('activityAdvice')->nullable();
             $table->string('activityResponsible')->nullable();
+            $table->string('activityTarget')->nullable();
+            $table->string('activityBudget')->nullable();
             $table->timestamps();
         });
     }
