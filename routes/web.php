@@ -76,7 +76,7 @@ Route::get('/Head_Information_Unit/manageActivityAll',[App\Http\Controllers\Acti
 Route::get('/Head_Information_Unit/manageUserAll', [App\Http\Controllers\UserController::class, 'manageUserAllHead_Information_Unit'])->name('manageUserAllHead_Information_Unit');
 
 
-Route::get('/files/download/{file}', [App\Http\Controllers\ActivityController::class, 'download'])->name('download');
+Route::get('/activityFile/download/{activityFile}', [App\Http\Controllers\ActivityController::class, 'download'])->name('download');
 
 
 Route::get('/Dormitory_Chairman/approveActivity/approve/{activityId}', [App\Http\Controllers\ActivityController::class, 'approveDormitory_Chairman'])->name('approveDormitory_Chairman');

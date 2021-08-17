@@ -19,6 +19,8 @@
                                     <th>หน่วยงานที่รับผิดชอบโครงการ</th>
                                     <th>วันที่เริ่มจัด</th>
                                     <th>ถึงวันที่</th>
+                                    <th>จำนวนเป้าหมายผู้เข้าร่วมโครงการ</th>
+                                    <th>งบประมาณที่ใช้ดำเนินโครงการ</th>
                                     <th>เอกสารประกอบโครงการ</th>
                                     <th>สถานะโครงการ</th>
                                     <th>ดำเนินการ</th>
@@ -34,7 +36,9 @@
                                     <td>{{$data->activityResponsible}}</td>
                                     <td>{{$data->activityStartDate}}</td>
                                     <td>{{$data->activityEndDate}}</td>
-                                    <td><a href="/files/download/{{$data->file}}">Download</a></td>
+                                    <td>{{$data->activityTarget}}</td>
+                                    <td>{{$data->activityBudget}}</td>
+                                    <td><a href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
                                     <td>{{$data->activityStatusName}}</td>
                                     <td><a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a> |
                                    <a href="/Dormitory_Chairman/editActivity/{{$data->activityId}}">แก้ไขกิจกรรม</a>|

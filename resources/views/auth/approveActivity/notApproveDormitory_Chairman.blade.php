@@ -20,6 +20,8 @@
                                     <input type="text" name="activityResponsible" value="{{$Activity->activityResponsible}}" readonly><br>
                                     <input type="text" name="activityStartDate" value="{{$Activity->activityStartDate}}" readonly><br>
                                     <input type="text" name="activityEndDate" value="{{$Activity->activityEndDate}}" readonly><br>
+                                    <input type="text" name="activityTarget" value="{{$Activity->activityTarget}}" readonly><br>
+                                    <input type="text" name="activityBudget" value="{{$Activity->activityBudget}}"><br>
                                     <label for="exampleFormControlTextarea1">เหตุผลที่ไม่อนุมัติ</label>
                                     <textarea name="activityAdvice" rows="3"></textarea>
                                     <input type="submit" value="Submit">

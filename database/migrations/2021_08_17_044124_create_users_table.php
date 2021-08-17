@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('dormitoryService')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 
