@@ -9,25 +9,38 @@
 
                 <div class="card-body">
                     <div class="mb-3 row">
-                        <table class="table"  border="1">
+                        <table class="table" border="1">
                             <thead>
                                 <tr>
                                     <th>รหัสกิจกรรม</th>
-                                    <th>ชื่อกิจกรรม</th>
-                                    <th>คำอธิบาย</th>
+                                    <th>ชื่อโครงการ</th>
+                                    <th>ลักษณะโครงการ</th>
+                                    <th>สถานที่ปฏิบัติงาน</th>
+                                    <th>หน่วยงานที่รับผิดชอบโครงการ</th>
+                                    <th>วันที่เริ่มจัด</th>
+                                    <th>ถึงวันที่</th>
+                                    <th>จำนวนเป้าหมายผู้เข้าร่วมโครงการ</th>
+                                    <th>งบประมาณที่ใช้ดำเนินโครงการ</th>
+                                    <th>เอกสารประกอบโครงการ</th>
                                     <th>ดำเนินการ</th>
                                 </tr>
                             </thead>
                             @foreach($file as $key=>$data)
-                            @if($data->status==5)
+                            @if($data->activityStatus==5)
                             <tbody>
                                 <tr>
-                                    <td>{{++$key}}</td>
-                                    <td>{{$data->title}}</td>
-                                    <td>{{$data->description}}</td>
-                                    <td><a href="/Dormitory_Chairman/conductActivity/user/{{$data->id}}">ดำเนินกิจกรรม</a> |
-                                   <a href="/Dormitory_Chairman/conductActivity/score/{{$data->id}}">ให้คะแนนกิจกรรม</a></td>
-                                </tr>
+                                    <td>{{$data->activityId}}</td>
+                                    <td>{{$data->activityName}}</td>
+                                    <td>{{$data->activityType}}</td>
+                                    <td>{{$data->activityPlace}}</td>
+                                    <td>{{$data->activityResponsible}}</td>
+                                    <td>{{$data->activityStartDate}}</td>
+                                    <td>{{$data->activityEndDate}}</td>
+                                    <td>{{$data->activityTarget}}</td>
+                                    <td>{{$data->activityBudget}}</td>
+                                    <td><a href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
+                                    <td><a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">เช็คชื่อ</a>|
+                                        <a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ให้คะแนนโครงการ</a>
                             </tbody>
                             @endif
                             @endforeach
@@ -41,4 +54,5 @@
     </div>
 
 
-@endsection
+
+    @endsection

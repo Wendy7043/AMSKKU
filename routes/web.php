@@ -28,8 +28,9 @@ Route::get('Head_Information_Unit/home', [App\Http\Controllers\HomeController::c
 Route::get('Director_Dormitory_Service_Division/home', [App\Http\Controllers\HomeController::class, 'Director_Dormitory_Service_Division'])->name('Director_Dormitory_Service_Division')->middleware('role');
 
 
-Route::get('/Dormitory_Director/createActivity',[App\Http\Controllers\ActivityController::class, 'creatActivityDormitory_Director'])->name('creatActivityDormitory_Director');
-Route::get('/Dormitory_Chairman/createActivity',[App\Http\Controllers\ActivityController::class, 'creatActivityDormitory_Chairman'])->name('creatActivityDormitory_Chairman');
+Route::get('/Dormitory_Director/createActivity',[App\Http\Controllers\ActivityController::class, 'createActivityDormitory_Director'])->name('createActivityDormitory_Director');
+Route::get('/Dormitory_Chairman/createActivity',[App\Http\Controllers\ActivityController::class, 'createActivityDormitory_Chairman'])->name('createActivityDormitory_Chairman');
+Route::get('/Head_Information_Unit/createActivity',[App\Http\Controllers\ActivityController::class, 'createActivityHead_Information_Unit'])->name('createActivityHead_Information_Unit');
 
 Route::get('/Dormitory_Director/conductActivity',[App\Http\Controllers\ActivityController::class, 'conductActivityDormitory_Director'])->name('conductActivityDormitory_Director');
 Route::get('/Dormitory_Chairman/conductActivity',[App\Http\Controllers\ActivityController::class, 'conductActivityDormitory_Chairman'])->name('conductActivityDormitory_Chairman');
@@ -106,8 +107,10 @@ Route::post('/Head_Dormitory_Service/approveActivity/notapprove/submit', [App\Ht
 Route::post('/Director_Dormitory_Service_Division/approveActivity/approve/submit', [App\Http\Controllers\ActivityController::class, 'submitApproveDirector_Dormitory_Service_Division'])->name('submitApproveDirector_Dormitory_Service_Division');
 Route::post('/Director_Dormitory_Service_Division/approveActivity/notapprove/submit', [App\Http\Controllers\ActivityController::class, 'submitNotApproveDirector_Dormitory_Service_Division'])->name('submitNotApproveDirector_Dormitory_Service_Division');
 
-Route::post('/Dormitory_Director/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreateActivityDormitory_Director'])->name('submitCreatActivityDormitory_Director');
-Route::post('/Dormitory_Chairman/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreateActivityDormitory_Chairman'])->name('submitCreatActivityDormitory_Chairman');
+Route::post('/Dormitory_Director/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreateActivityDormitory_Director'])->name('submitCreateActivityDormitory_Director');
+Route::post('/Dormitory_Chairman/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreateActivityDormitory_Chairman'])->name('submitCreateActivityDormitory_Chairman');
+Route::post('/Head_Information_Unit/createActivity/Submit', [App\Http\Controllers\ActivityController::class, 'submitCreateActivityHead_Information_Unit'])->name('submitCreateActivityHead_Information_Unit');
+
 
 Route::get('/Dormitory_Director/conductActivity/user/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Director'])->name('userConductActivityDormitory_Director');
 Route::get('/Dormitory_Chairman/conductActivity/user/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Chairman'])->name('userConductActivityDormitory_Chairman');

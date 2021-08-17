@@ -8,14 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 class ActivityController extends Controller
 {
-    public function creatActivityDormitory_Director()
+    public function createActivityDormitory_Director()
     {
-        return view('auth.Activity.creatActivityDormitory_Director');
+        return view('auth.Activity.createActivityDormitory_Director');
     }
-    public function creatActivityDormitory_Chairman()
+    public function createActivityDormitory_Chairman()
     {
-        return view('auth.Activity.creatActivityDormitory_Chairman');
+        return view('auth.Activity.createActivityDormitory_Chairman');
     }
+    public function createActivityHead_Information_Unit()
+    {
+        return view('auth.Activity.createActivityHead_Information_Unit');
+    }
+
+    
 
 
 
@@ -83,7 +89,8 @@ class ActivityController extends Controller
 
     public function manageActivityAllHead_Information_Unit()
     {
-        return view('auth.Activity.manageActivityAllHead_Information_Unit');
+        $file = Activity::all();
+        return view('auth.Activity.manageActivityAllHead_Information_Unit', compact('file'));
     }
 
     public function submitCreateActivityDormitory_Director(Request $request)
@@ -128,6 +135,29 @@ class ActivityController extends Controller
         $data->activityBudget = $request->activityBudget;
         $data->activityStatus = 2;
         $data->activityStatusName ='รอที่ปรึกษาหอพักอนุมัติ';
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function submitCreateActivityHead_Information_Unit(Request $request)
+    {
+        $data = new Activity;
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $activityFile = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $activityFile);
+            $data->activityFile = $activityFile;
+        }
+        $data->activityName = $request->activityName;
+        $data->activityType = $request->activityType;
+        $data->activityPlace = $request->activityPlace;
+        $data->activityResponsible = $request->activityResponsible;
+        $data->activityStartDate = $request->activityStartDate;
+        $data->activityEndDate = $request->activityEndDate;
+        $data->activityTarget = $request->activityTarget;
+        $data->activityBudget = $request->activityBudget;
+        $data->activityStatus = 5;
+        $data->activityStatusName ='สร้างโดยกองบริการหอพัก';
         $data->save();
         return redirect()->back();
     }
