@@ -40,9 +40,9 @@
                                     <td>{{$data->activityBudget}}</td>
                                     <td><a href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
                                     <td>{{$data->activityStatusName}}</td>
-                                    <td><a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a> |
-                                   <a href="/Dormitory_Chairman/editActivity/{{$data->activityId}}">แก้ไขกิจกรรม</a>|
-                                   <a href="/Dormitory_Chairman/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a></td>
+                                    <td><a href="/Dormitory_Director/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a> |
+                                   <a href="/Dormitory_Director/manageActivity/editActivity/{{$data->activityId}}">แก้ไขกิจกรรม</a>|
+                                   <a href="/Dormitory_Director/manageActivity/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a></td>
 
 
 

@@ -39,8 +39,8 @@
                                     <td>{{$data->activityTarget}}</td>
                                     <td>{{$data->activityBudget}}</td>
                                     <td><a href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
-                                    <td><a href="/activityFile/download/{{$data->activityFile}}">แก้ไขกิจกรรม</a>|
-                                    <a href="/activityFile/download/{{$data->activityFile}}">ลบกิจกรรม</a>|
+                                    <td><a href="/Head_Information_Unit/manageActivityAll/editActivity/{{$data->activityId}}">แก้ไขกิจกรรม</a>|
+                                    <a href="/Head_Information_Unit/manageActivityAll/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a>|
                                     
                                 </td>
 

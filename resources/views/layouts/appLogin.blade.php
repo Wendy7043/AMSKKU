@@ -75,31 +75,10 @@
 
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-
-            <!-- Authentication Links -->
-
             <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading">
-                    {{ Auth::user()->name }}
+                <a class="sidebar-heading" href="{{ url('/') }}">
+                    กลับ
                 </a>
-
-                <a class="sidebar-heading" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    {{ __('ออกจากระบบ') }}
-                </a>
-                <a class="sidebar-heading" href="/Student/changePassword">
-                    เปลี่ยนรหัสผ่าน
-                </a>
-                <a class="sidebar-heading" href="/Student/showDataUser">
-                    ข้อมูลนักศึกษา
-                </a>
-                <a class="sidebar-heading" href="/Student/showDataActivity">
-                    ข้อมูลกิจกรรม
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
             </div>
 
 
@@ -119,9 +98,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-
                 </div>
-                <a class="sidebar-heading"  href="/Student/home">
+                <a class="sidebar-heading" href="{{ url('/') }}">
                     AMSKKU
                 </a>
             </nav>
