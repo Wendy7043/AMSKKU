@@ -120,9 +120,15 @@ Route::get('/Dormitory_Chairman/conductActivity/score/{activityId}', [App\Http\C
 Route::get('/Dormitory_Director/showActivityAdvice/{activityId}', [App\Http\Controllers\ActivityController::class, 'showActivityAdvice_Dormitory_Director'])->name('showActivityAdvice_Dormitory_Director');
 Route::get('/Dormitory_Chairman/showActivityAdvice/{activityId}', [App\Http\Controllers\ActivityController::class, 'showActivityAdvice_Dormitory_Chairman'])->name('showActivityAdvice_Dormitory_Chairman');
 
-Route::get('/Dormitory_Director/editActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Director'])->name('userConductActivityDormitory_Director');
-Route::get('/Dormitory_Chairman/editActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Chairman'])->name('userConductActivityDormitory_Chairman');
+Route::get('/Dormitory_Director/manageActivity/editActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'editActivity_Dormitory_Director'])->name('editActivity_Dormitory_Director');
+Route::get('/Dormitory_Chairman/manageActivity/editActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'editActivity_Dormitory_Chairman'])->name('editActivity_Dormitory_Chairman');
+Route::get('/Head_Information_Unit/manageActivityAll/editActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'editActivity_Head_Information_Unit'])->name('editActivity_Head_Information_Unit');
 
-Route::get('/Dormitory_Director/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Director'])->name('userConductActivityDormitory_Director');
-Route::get('/Dormitory_Chairman/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'userConductActivityDormitory_Chairman'])->name('userConductActivityDormitory_Chairman');
+Route::post('/Dormitory_Director/manageActivity/editActivity/submit', [App\Http\Controllers\ActivityController::class, 'submitEditActivity_Dormitory_Director'])->name('submitCreateActivityDormitory_Chairman');
+Route::post('/Dormitory_Chairman/manageActivity/editActivity/submit', [App\Http\Controllers\ActivityController::class, 'submitEditActivity_Dormitory_Chairman'])->name('submitCreateActivityHead_Information_Unit');
+Route::post('/Head_Information_Unit/manageActivityAll/editActivity/submit', [App\Http\Controllers\ActivityController::class, 'submitEditActivity_Head_Information_Unit'])->name('submitEditActivity_Head_Information_Unit');
+
+Route::get('/Dormitory_Director/manageActivity/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'deleteActivity_Dormitory_Director'])->name('deleteActivity_Dormitory_Director');
+Route::get('/Dormitory_Chairman/manageActivity/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'deleteActivity_Dormitory_Chairman'])->name('deleteActivity_Dormitory_Chairman');
+Route::get('/Head_Information_Unit/manageActivityAll/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'deleteActivityAll_Head_Information_Unit'])->name('deleteActivityAll_Head_Information_Unit');
 Auth::routes();

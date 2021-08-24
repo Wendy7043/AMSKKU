@@ -383,21 +383,125 @@ class ActivityController extends Controller
         $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.Activity.editActivity_Dormitory_Chairman', compact('Activity'));
     }
+    public function editActivity_Head_Information_Unit($activityId)
+    {
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.editActivity_Head_Information_Unit', compact('Activity'));
+    }
     public function editActivity_Dormitory_Director($activityId)
     {
         $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.Activity.editActivity_Dormitory_Director', compact('Activity'));
     }
 
-    public function deleteActivityAdvice_Dormitory_Chairman($activityId)
+    public function submitEditActivity_Dormitory_Director (Request $request)
     {
-        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
-        return view('auth.Activity.notApproveDormitory_Chairman', compact('Activity'));
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
+            ]);
+        }
+        $activityName = $request->file('activityName');
+        $activityType = $request->file('activityType');
+        $activityPlace = $request->file('activityPlace');
+        $activityResponsible = $request->file('activityResponsible');
+        $activityStartDate = $request->file('activityStartDate');
+        $activityEndDate = $request->file('activityEndDate');
+        $activityTarget = $request->file('activityTarget');
+        $activityBudget = $request->file('activityBudget');
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityName' => $activityName,
+            'activityType' =>  $activityType,
+            'activityPlace' => $activityPlace,
+            'activityResponsible' =>  $activityResponsible,
+            'activityStartDate' => $activityStartDate,
+            'activityEndDate' => $activityEndDate,
+            'activityTarget' =>  $activityTarget,
+            'activityBudget' => $activityBudget
+        ]);
+        return back()->with('post_update', 'แก้ไขสำเร็จแล้ว');
     }
-    public function deleteActivity_Dormitory_Director($activityId)
+
+    public function submitEditActivity_Dormitory_Chairman (Request $request)
     {
-        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
-        return view('auth.Activity.notApproveDormitory_Chairman', compact('Activity'));
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
+            ]);
+        }
+        $activityName = $request->file('activityName');
+        $activityType = $request->file('activityType');
+        $activityPlace = $request->file('activityPlace');
+        $activityResponsible = $request->file('activityResponsible');
+        $activityStartDate = $request->file('activityStartDate');
+        $activityEndDate = $request->file('activityEndDate');
+        $activityTarget = $request->file('activityTarget');
+        $activityBudget = $request->file('activityBudget');
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityName' => $activityName,
+            'activityType' =>  $activityType,
+            'activityPlace' => $activityPlace,
+            'activityResponsible' =>  $activityResponsible,
+            'activityStartDate' => $activityStartDate,
+            'activityEndDate' => $activityEndDate,
+            'activityTarget' =>  $activityTarget,
+            'activityBudget' => $activityBudget
+        ]);
+        return back()->with('post_update', 'แก้ไขสำเร็จแล้ว');
+    }
+
+    public function submitEditActivity_Head_Information_Unit (Request $request)
+    {
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
+            ]);
+        }
+        $activityName = $request->file('activityName');
+        $activityType = $request->file('activityType');
+        $activityPlace = $request->file('activityPlace');
+        $activityResponsible = $request->file('activityResponsible');
+        $activityStartDate = $request->file('activityStartDate');
+        $activityEndDate = $request->file('activityEndDate');
+        $activityTarget = $request->file('activityTarget');
+        $activityBudget = $request->file('activityBudget');
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityName' => $activityName,
+            'activityType' =>  $activityType,
+            'activityPlace' => $activityPlace,
+            'activityResponsible' =>  $activityResponsible,
+            'activityStartDate' => $activityStartDate,
+            'activityEndDate' => $activityEndDate,
+            'activityTarget' =>  $activityTarget,
+            'activityBudget' => $activityBudget
+        ]);
+        return back()->with('post_update', 'แก้ไขสำเร็จแล้ว');
+    }
+
+    public function deleteActivity_Dormitory_Chairman (Request $request)
+    {
+        DB::table('activities')->where('activityId', $request->activityId)->delete();
+        return back()->with('post_delete', 'ลบสำเร็จแล้ว');
+    }
+
+    public function deleteActivity_Dormitory_Director(Request $request)
+    {
+        DB::table('activities')->where('activityId', $request->activityId)->delete();
+        return back()->with('post_delete', 'ลบสำเร็จแล้ว');
+    }
+    public function deleteActivityAll_Head_Information_Unit(Request $request)
+    {
+        DB::table('activities')->where('activityId', $request->activityId)->delete();
+        return back()->with('post_delete', 'ลบสำเร็จแล้ว');
     }
     
 

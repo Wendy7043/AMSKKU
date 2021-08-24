@@ -1,4 +1,4 @@
-@extends('layouts.appDormitory_Chairman')
+@extends('layouts.appHead_Information_Unit')
 
 @section('content')
 <div class="container">

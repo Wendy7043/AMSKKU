@@ -41,8 +41,8 @@
                                     <td><a href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
                                     <td>{{$data->activityStatusName}}</td>
                                     <td><a href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a> |
-                                   <a href="/Dormitory_Chairman/editActivity/{{$data->activityId}}">แก้ไข</a>|
-                                   <a href="/Dormitory_Chairman/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a></td>
+                                   <a href="/Dormitory_Chairman/manageActivity/editActivity/{{$data->activityId}}">แก้ไข</a>|
+                                   <a href="/Dormitory_Chairman/manageActivity/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a></td>
 
 
 
