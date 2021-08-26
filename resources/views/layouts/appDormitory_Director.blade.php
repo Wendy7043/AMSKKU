@@ -79,30 +79,30 @@
             <!-- Authentication Links -->
 
             <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading">
+                <a class="sidebar-heading text-muted">
                     {{ Auth::user()->name }}
-                </a>
+                </a><br>
 
-                <a class="sidebar-heading" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="sidebar-heading bg-light text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('ออกจากระบบ') }}
                 </a>
-                <a class="sidebar-heading" href="/Dormitory_Director/changePassword">
+                <a class="sidebar-heading bg-light" href="/Dormitory_Director/changePassword">
                     เปลี่ยนรหัสผ่าน
                 </a>
-                <a class="sidebar-heading" href="/Dormitory_Director/showDataUser">
+                <a class="sidebar-heading bg-light" href="/Dormitory_Director/showDataUser">
                     ข้อมูลนักศึกษา
                 </a>
-                <a class="sidebar-heading" href="/Dormitory_Director/showDataActivity">
+                <a class="sidebar-heading bg-light" href="/Dormitory_Director/showDataActivity">
                     ข้อมูลกิจกรรม
                 </a>
-                <a class="sidebar-heading" href="/Dormitory_Director/manageActivity">
+                <a class="sidebar-heading bg-light" href="/Dormitory_Director/manageActivity">
                     จัดการกิจกรรม
                 </a>
-                <a class="sidebar-heading" href="/Dormitory_Director/conductActivity">
+                <a class="sidebar-heading bg-light" href="/Dormitory_Director/conductActivity">
                     ดำเนินกิจกรรม
                 </a>
-                <a class="sidebar-heading" href="/Dormitory_Director/showDataStudentAll">
+                <a class="sidebar-heading bg-light" href="/Dormitory_Director/showDataStudentAll">
                     ดูรายชื่อนักศึกษา
                 </a>
 
@@ -136,6 +136,16 @@
             </nav>
 
             <div class="container-fluid">
+            <br>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col">
+                        <div class="title m-b-md">
+                            วันที่ {{date("d/m/Y")}}
+                        </div>
+                    </div>
+                </div>
+
                 <main class="py-4">
                     @yield('content')
                 </main>

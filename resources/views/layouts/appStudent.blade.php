@@ -78,22 +78,22 @@
 
             <!-- Authentication Links -->
 
-            <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading">
+            <div class="list-group list-group-item-action">
+                <a class="sidebar-heading  text-muted">
                     {{ Auth::user()->name }}
-                </a>
+                </a><br>
 
-                <a class="sidebar-heading" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="sidebar-heading bg-light text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('ออกจากระบบ') }}
                 </a>
-                <a class="sidebar-heading" href="/Student/changePassword">
+                <a class="sidebar-heading bg-light" href="/Student/changePassword">
                     เปลี่ยนรหัสผ่าน
                 </a>
-                <a class="sidebar-heading" href="/Student/showDataUser">
+                <a class="sidebar-heading bg-light" href="/Student/showDataUser">
                     ข้อมูลนักศึกษา
                 </a>
-                <a class="sidebar-heading" href="/Student/showDataActivity">
+                <a class="sidebar-heading bg-light" href="/Student/showDataActivity">
                     ข้อมูลกิจกรรม
                 </a>
 
@@ -127,6 +127,16 @@
             </nav>
 
             <div class="container-fluid">
+            <br>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col">
+                        <div class="title m-b-md">
+                            วันที่ {{date("d/m/Y")}}
+                        </div>
+                    </div>
+                </div>
+
                 <main class="py-4">
                     @yield('content')
                 </main>

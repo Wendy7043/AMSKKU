@@ -76,7 +76,7 @@
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
             <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading" href="{{ url('/') }}">
+                <a class="sidebar-heading bg-light" href="{{ url('/') }}">
                     กลับ
                 </a>
             </div>
@@ -105,6 +105,16 @@
             </nav>
 
             <div class="container-fluid">
+            <br>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col">
+                        <div class="title m-b-md">
+                            วันที่ {{date("d/m/Y")}}
+                        </div>
+                    </div>
+                </div>
+
                 <main class="py-4">
                     @yield('content')
                 </main>

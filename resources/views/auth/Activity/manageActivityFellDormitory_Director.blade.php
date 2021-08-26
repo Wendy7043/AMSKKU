@@ -16,7 +16,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <table class="table table-striped w-auto">
+            <table class="table table-striped">
                 <thead>
                     <tr class="table-primary ">
                         <th scope="row">รหัสกิจกรรม</th>
@@ -30,17 +30,19 @@
                     </tr>
                 </thead>
                 @foreach($file as $key=>$data)
-                @if($data->activityStatus==1||$data->activityStatus==2||$data->activityStatus==3||$data->activityStatus==4||$data->activityStatus==5)
+                @if($data->activityStatus==0)
                 <tbody>
                     <td>{{$data->activityId}}</td>
                     <td>{{$data->activityName}}</td>
                     <td>{{$data->activityType}}</td>
                     <td>{{$data->activityPlace}}</td>
                     <td>{{$data->activityStartDate}}</td>
-                    <td><a class="btn btn-secondary" href="/activityFile/download/{{$data->activityFile}}">ดาวน์โหลด</a></td>
+                    <td><a class="btn btn-secondary" href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
                     <td>{{$data->activityStatusName}}</td>
-                    <td><a class="btn btn-secondary" href="">ดูรายละเอียด</a></td>
-
+                    <td><a class="btn btn-info" href="/Dormitory_Director/showActivityAdvice/{{$data->activityId}}">ดูคำอธิบาย</a>
+                        <a class="btn btn-warning" href="/Dormitory_Director/manageActivity/editActivity/{{$data->activityId}}">แก้ไขกิจกรรม</a>
+                        <a class="btn btn-danger" href="/Dormitory_Director/manageActivity/deleteActivity/{{$data->activityId}}">ลบกิจกรรม</a>
+                    </td>
                 </tbody>
                 @endif
                 @endforeach
