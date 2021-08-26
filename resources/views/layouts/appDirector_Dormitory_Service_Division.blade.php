@@ -79,27 +79,27 @@
             <!-- Authentication Links -->
 
             <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading">
+                <a class="sidebar-heading text-muted">
                     {{ Auth::user()->name }}
-                </a>
+                </a><br>
 
-                <a class="sidebar-heading" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="sidebar-heading bg-light text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('ออกจากระบบ') }}
                 </a>
-                <a class="sidebar-heading" href="/Director_Dormitory_Service_Division/changePassword">
+                <a class="sidebar-heading bg-light" href="/Director_Dormitory_Service_Division/changePassword">
                     เปลี่ยนรหัสผ่าน
                 </a>
-                <a class="sidebar-heading" href="/Director_Dormitory_Service_Division/showDataUser">
+                <a class="sidebar-heading bg-light" href="/Director_Dormitory_Service_Division/showDataUser">
                     ข้อมูลผู้ใช้
                 </a>
-                <a class="sidebar-heading"  href="/Director_Dormitory_Service_Division/showDataStudentAll">
+                <a class="sidebar-heading bg-light" href="/Director_Dormitory_Service_Division/showDataStudentAll">
                     ดูรายชื่อนักศึกษา
                 </a>
-                <a class="sidebar-heading" href="/Director_Dormitory_Service_Division/viewAllActivity">
+                <a class="sidebar-heading bg-light" href="/Director_Dormitory_Service_Division/viewAllActivity">
                     ดูข้อมูลกิจกรรม
                 </a>
-                <a class="sidebar-heading" href="/Director_Dormitory_Service_Division/approveActivity">
+                <a class="sidebar-heading bg-light" href="/Director_Dormitory_Service_Division/approveActivity">
                     อนุมัติกิจกรรม
                 </a>
 
@@ -133,9 +133,22 @@
             </nav>
 
             <div class="container-fluid">
+
+            <div class="container-fluid">
+            <br>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col">
+                        <div class="title m-b-md">
+                            วันที่ {{date("d/m/Y")}}
+                        </div>
+                    </div>
+                </div>
+
                 <main class="py-4">
                     @yield('content')
                 </main>
+            </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -144,4 +157,4 @@
     <!-- /#wrapper -->
 </body>
 
-</html> 
+</html>

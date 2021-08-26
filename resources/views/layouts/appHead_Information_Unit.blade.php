@@ -79,24 +79,24 @@
             <!-- Authentication Links -->
 
             <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading">
+                <a class="sidebar-heading text-muted">
                     {{ Auth::user()->name }}
-                </a>
+                </a><br>
 
-                <a class="sidebar-heading" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="sidebar-heading bg-light text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('ออกจากระบบ') }}
                 </a>
                 <a class="sidebar-heading" href="/Head_Information_Unit/changePassword">
                     เปลี่ยนรหัสผ่าน
                 </a>
-                <a class="sidebar-heading" href="/Head_Information_Unit/showDataUser">
+                <a class="sidebar-heading bg-light" href="/Head_Information_Unit/showDataUser">
                     ข้อมูลผู้ใช้
                 </a>
-                <a class="sidebar-heading" href="/Head_Information_Unit/manageActivityAll">
+                <a class="sidebar-heading bg-light" href="/Head_Information_Unit/manageActivityAll">
                     จัดการข้อมูลกิจกรรม
                 </a>
-                <a class="sidebar-heading" href="/Head_Information_Unit/manageUserAll">
+                <a class="sidebar-heading bg-light" href="/Head_Information_Unit/manageUserAll">
                     จัดการบัญชีผู้ใช้
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -129,6 +129,16 @@
             </nav>
 
             <div class="container-fluid">
+            <br>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col">
+                        <div class="title m-b-md">
+                            วันที่ {{date("d/m/Y")}}
+                        </div>
+                    </div>
+                </div>
+
                 <main class="py-4">
                     @yield('content')
                 </main>

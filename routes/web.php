@@ -131,4 +131,8 @@ Route::post('/Head_Information_Unit/manageActivityAll/editActivity/submit', [App
 Route::get('/Dormitory_Director/manageActivity/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'deleteActivity_Dormitory_Director'])->name('deleteActivity_Dormitory_Director');
 Route::get('/Dormitory_Chairman/manageActivity/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'deleteActivity_Dormitory_Chairman'])->name('deleteActivity_Dormitory_Chairman');
 Route::get('/Head_Information_Unit/manageActivityAll/deleteActivity/{activityId}', [App\Http\Controllers\ActivityController::class, 'deleteActivityAll_Head_Information_Unit'])->name('deleteActivityAll_Head_Information_Unit');
+
+Route::get('/Dormitory_Director/manageActivity/Outline',[App\Http\Controllers\ActivityController::class, 'manageActivityOutlineDormitory_Director'])->name('manageActivityOutlineDormitory_Director');
+Route::get('/Dormitory_Director/manageActivity/Fell',[App\Http\Controllers\ActivityController::class, 'manageActivityFellDormitory_Director'])->name('manageActivityFellDormitory_Director');
+
 Auth::routes();

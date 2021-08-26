@@ -79,27 +79,27 @@
             <!-- Authentication Links -->
 
             <div class="list-group list-group-item-action bg-light">
-                <a class="sidebar-heading">
+                <a class="sidebar-heading text-muted">
                     {{ Auth::user()->name }}
-                </a>
+                </a><br>
 
-                <a class="sidebar-heading" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="sidebar-heading bg-light text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     {{ __('ออกจากระบบ') }}
                 </a>
-                <a class="sidebar-heading" href="/Head_Dormitory_Service/changePassword">
+                <a class="sidebar-heading bg-light" href="/Head_Dormitory_Service/changePassword">
                     เปลี่ยนรหัสผ่าน
                 </a>
-                <a class="sidebar-heading" href="/Head_Dormitory_Service/showDataUser">
+                <a class="sidebar-heading bg-light" href="/Head_Dormitory_Service/showDataUser">
                     ข้อมูลผู้ใช้
                 </a>
-                <a class="sidebar-heading"  href="/Head_Dormitory_Service/showDataStudentAll">
+                <a class="sidebar-heading bg-light"  href="/Head_Dormitory_Service/showDataStudentAll">
                     ดูรายชื่อนักศึกษา
                 </a>
-                <a class="sidebar-heading" href="/Head_Dormitory_Service/viewAllActivity">
+                <a class="sidebar-heading bg-light" href="/Head_Dormitory_Service/viewAllActivity">
                     ดูข้อมูลกิจกรรม
                 </a>
-                <a class="sidebar-heading" href="/Head_Dormitory_Service/approveActivity">
+                <a class="sidebar-heading bg-light" href="/Head_Dormitory_Service/approveActivity">
                     อนุมัติกิจกรรม
                 </a>
 
@@ -133,6 +133,16 @@
             </nav>
 
             <div class="container-fluid">
+            <br>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col">
+                        <div class="title m-b-md">
+                            วันที่ {{date("d/m/Y")}}
+                        </div>
+                    </div>
+                </div>
+
                 <main class="py-4">
                     @yield('content')
                 </main>

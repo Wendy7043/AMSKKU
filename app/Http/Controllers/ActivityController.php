@@ -503,6 +503,21 @@ class ActivityController extends Controller
         DB::table('activities')->where('activityId', $request->activityId)->delete();
         return back()->with('post_delete', 'ลบสำเร็จแล้ว');
     }
+
+    public function manageActivityOutlineDormitory_Director()
+    {
+        $file = Activity::all();
+        return view('auth.Activity.manageActivityOutlineDormitory_Director', compact('file'));
+    }
+    public function manageActivityFellDormitory_Director()
+    {
+        $file = Activity::all();
+        return view('auth.Activity.manageActivityFellDormitory_Director', compact('file'));
+    }
+
+
+    
+    
     
 
 }
