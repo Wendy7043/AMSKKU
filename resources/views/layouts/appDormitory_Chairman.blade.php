@@ -96,7 +96,7 @@
                 <a class="sidebar-heading bg-light" href="/Dormitory_Chairman/showDataActivity"">
                     ข้อมูลกิจกรรม
                 </a>
-                <a class="sidebar-heading bg-light" href="/Dormitory_Chairman/manageActivity">
+                <a class=" sidebar-heading bg-light" href="/Dormitory_Chairman/manageActivity">
                     จัดการกิจกรรม
                 </a>
                 <a class="sidebar-heading bg-light" href="/Dormitory_Chairman/conductActivity">
@@ -125,21 +125,18 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <button class="btn btn-primary" id="menu-toggle">เมนู</button>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
+                <div class="mx-auto order-0">
+                    <a class="navbar-brand mx-auto" href="{{ url('/') }}">AMSKKU</a>
                 </div>
-                <a class="sidebar-heading" href="/Dormitory_Chairman/home">
-                    AMSKKU
+                <a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
                 </a>
             </nav>
 
             <div class="container-fluid">
-            <br>
+                <br>
                 <div class="row">
                     <div class="col-10"></div>
                     <div class="col">
