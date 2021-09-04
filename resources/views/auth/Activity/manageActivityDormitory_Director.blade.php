@@ -39,7 +39,7 @@
                     <td>{{$data->activityStartDate}}</td>
                     <td><a class="btn btn-secondary" href="/activityFile/download/{{$data->activityFile}}">ดาวน์โหลด</a></td>
                     <td>{{$data->activityStatusName}}</td>
-                    <td><a class="btn btn-secondary" href="">ดูรายละเอียด</a></td>
+                    <td><a class="btn btn-secondary" href="/Dormitory_Director/manageActivity/activityDetail/{{$data->activityId}}">ดูรายละเอียด</a></td>
 
                 </tbody>
                 @endif

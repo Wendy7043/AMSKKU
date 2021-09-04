@@ -2,60 +2,51 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('กิจกรรม') }}</div>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped w-auto">
+                <thead>
+                    <tr class="table-primary ">
+                        <th scope="row">รหัสกิจกรรม</th>
+                        <th>ชื่อโครงการ</th>
+                        <th>ลักษณะโครงการ</th>
+                        <th>สถานที่ปฏิบัติงาน</th>
+                        <th>วันที่จัดกิจกรรม</th>
+                        <th>เอกสารประกอบโครงการ</th>
+                        <th>สถานะโครงการ</th>
+                        <th>ดำเนินการ</th>
+                    </tr>
+                </thead>
+                @foreach($file as $key=>$data)
+                @if($data->activityStatus==2)
+                <tbody>
+                    <td>{{$data->activityId}}</td>
+                    <td>{{$data->activityName}}</td>
+                    <td>{{$data->activityType}}</td>
+                    <td>{{$data->activityPlace}}</td>
+                    <td>{{$data->activityStartDate}}</td>
+                    <td><a class="btn btn-secondary" href="/activityFile/download/{{$data->activityFile}}">ดาวน์โหลด</a></td>
+                    <td>{{$data->activityStatusName}}</td>
+                    <td><a class="btn btn-warning" href="">ดูรายละเอียด</a>
+                    <a class="btn btn-success" href="/Dormitory_Counselor/approveActivity/approve/{{$data->activityId}}">อนุมัติกิจกรรม</a>
+                    <a class="btn btn-danger" href="/Dormitory_Counselor/approveActivity/notApprove/{{$data->activityId}}">ไม่อนุมัติกิจกรรม</a></td>
+                    
 
-                <div class="card-body">
-                    <div class="mb-3 row">
-                        <table class="table" border="1">
-                            <thead>
-                                <tr>
-                                <th>รหัสกิจกรรม</th>
-                                    <th>ชื่อโครงการ</th>
-                                    <th>ลักษณะโครงการ</th>
-                                    <th>สถานที่ปฏิบัติงาน</th>
-                                    <th>หน่วยงานที่รับผิดชอบโครงการ</th>
-                                    <th>วันที่เริ่มจัด</th>
-                                    <th>ถึงวันที่</th>
-                                    <th>จำนวนเป้าหมายผู้เข้าร่วมโครงการ</th>
-                                    <th>งบประมาณที่ใช้ดำเนินโครงการ</th>
-                                    <th>เอกสารประกอบโครงการ</th>
-                                    <th>สถานะโครงการ</th>
-                                    <th>ดำเนินการ</th>
-                                </tr>
-                            </thead>
-                            @foreach($file as $key=>$data)
-                            @if($data->activityStatus==2)
-                            <tbody>
-                                <tr>
-                                    <td>{{$data->activityId}}</td>
-                                    <td>{{$data->activityName}}</td>
-                                    <td>{{$data->activityType}}</td>
-                                    <td>{{$data->activityPlace}}</td>
-                                    <td>{{$data->activityResponsible}}</td>
-                                    <td>{{$data->activityStartDate}}</td>
-                                    <td>{{$data->activityEndDate}}</td>
-                                    <td>{{$data->activityTarget}}</td>
-                                    <td>{{$data->activityBudget}}</td>
-                                    <td><a href="/activityFile/download/{{$data->activityFile}}">Download</a></td>
-                                    <td>รอที่ปรึกษาหอพักอนุมัติ</td>
-                                    <td><a href="/Dormitory_Counselor/approveActivity/approve/{{$data->activityId}}">อนุมัติ</a> |
-                                        <a href="/Dormitory_Counselor/approveActivity/notApprove/{{$data->activityId}}">ไม่อนุมัติ</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            @endif
-                            @endforeach
-                            </form>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
+                </tbody>
+                @endif
+                @endforeach
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
+</div>
 
-
-    @endsection
+@endsection
