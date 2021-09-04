@@ -27,6 +27,11 @@
                     <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
                     เหตุผลที่ไม่อนุมัติ<br>
                     <textarea class="form-control" name="activityAdvice" rows="3"></textarea><br><br><br>
+                    @if(Session::has('post_update'))
+                    <span>{{Session::get('post_update')}}</span>
+                    @endif
+                    <br>
+                    <br>
                     <input type="submit" class="btn btn-danger" value="ไม่อนุมัติกิจกรรม">
             </form>
         </div>

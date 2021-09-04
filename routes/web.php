@@ -135,4 +135,7 @@ Route::get('/Head_Information_Unit/manageActivityAll/deleteActivity/{activityId}
 Route::get('/Dormitory_Director/manageActivity/Outline',[App\Http\Controllers\ActivityController::class, 'manageActivityOutlineDormitory_Director'])->name('manageActivityOutlineDormitory_Director');
 Route::get('/Dormitory_Director/manageActivity/Fell',[App\Http\Controllers\ActivityController::class, 'manageActivityFellDormitory_Director'])->name('manageActivityFellDormitory_Director');
 
+Route::get('/Dormitory_Director/manageActivity/activityDetail/{activityId}', [App\Http\Controllers\ActivityController::class, 'activityDetailDormitory_Director'])->name('activityDetailDormitory_Director');
+
+
 Auth::routes();

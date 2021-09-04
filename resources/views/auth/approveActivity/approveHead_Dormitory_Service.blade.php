@@ -2,42 +2,38 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('อนุมัติกิจกรรม') }}</div>
-                <div class="card-body">
-
-                    <div class="row">
-                        <div class="col-6">
-                            <form action="/Head_Dormitory_Service/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
-                                <div class="col-sm-10">
-                                    {{csrf_field()}}
-                                    <input type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
-                                    <input type="text" name="activityName" value="{{$Activity->activityName}}" readonly><br>
-                                    <input type="text" name="activityType"  value="{{$Activity->activityType}}" readonly><br>
-                                    <input type="text" name="activityPlace" value="{{$Activity->activityPlace}}" readonly><br>
-                                    <input type="text" name="activityResponsible" value="{{$Activity->activityResponsible}}" readonly><br>
-                                    <input type="text" name="activityStartDate" value="{{$Activity->activityStartDate}}" readonly><br>
-                                    <input type="text" name="activityEndDate" value="{{$Activity->activityEndDate}}" readonly><br>
-                                    <input type="text" name="activityTarget" value="{{$Activity->activityTarget}}" readonly><br>
-                                    <input type="text" name="activityBudget" value="{{$Activity->activityBudget}}"><br>
-                                    <input type="file" name="activityFile" value="{{$Activity->activityFile}}"><br>
-                                    <input type="submit" value="Submit">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+    <div class="card">
+        <div class="card-body">
+            <form action="/Head_Dormitory_Service/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
+                {{csrf_field()}}
+                <div class="form-group">
+               
+                <input class="form-control" type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
+                 ชื่อโครงการ
+                    <input class="form-control" type="text" name="activityName" value="{{$Activity->activityName}}" readonly><br>
+                    ลักษณะโครงการ 
+                    <input class="form-control" type="text" name="activityType" value="{{$Activity->activityType}}" readonly><br>
+                    สถานที่ปฏิบัติงาน  
+                    <input class="form-control" type="text" name="activityPlace" value="{{$Activity->activityPlace}}" readonly><br>
+                    หน่วยงานที่รับผิดชอบโครงการ 
+                    <input class="form-control" type="text" name="activityResponsible" value="{{$Activity->activityResponsible}}" readonly><br>
+                    วันที่จัดกิจกรรม
+                    <input class="form-control" type="text" name="activityStartDate" value="{{$Activity->activityStartDate}}" readonly><br>
+                    ถึงวันที่
+                    <input class="form-control" type="text" name="activityEndDate" value="{{$Activity->activityEndDate}}" readonly><br>
+                    จำนวนเป้าหมายผู้เข้าร่วมโครงการ
+                    <input class="form-control" type="text" name="activityTarget" value="{{$Activity->activityTarget}}" readonly><br>
+                    งบประมาณที่ใช้ดำเนินโครงการ
+                    <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
+                    <input class="form-control" type="file" name="activityFile" value="{{$Activity->activityFile}}">
+                    <span class="text-danger"> @error("activityFile"){{$message}}@enderror </span><br><br><br>
                     @if(Session::has('post_update'))
                     <span>{{Session::get('post_update')}}</span>
                     @endif
-                    <div class="mb-3 row">
-                        <div class="col-6"></div>
-
-                    </div>
-
-                </div>
-            </div>
+                    <br>
+                    <br>
+                    <input type="submit" class="btn btn-success" value="อนุมัติกิจกรรม">
+            </form>
         </div>
     </div>
 </div>

@@ -25,7 +25,13 @@
                     <input class="form-control" type="text" name="activityTarget" value="{{$Activity->activityTarget}}" readonly><br>
                     งบประมาณที่ใช้ดำเนินโครงการ
                     <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
-                    <input class="form-control" type="file" name="activityFile" value="{{$Activity->activityFile}}"><br><br><br>
+                    <input class="form-control" type="file" name="activityFile" value="{{$Activity->activityFile}}">
+                    <span class="text-danger"> @error("activityFile"){{$message}}@enderror </span><br><br><br>
+                    @if(Session::has('post_update'))
+                    <span>{{Session::get('post_update')}}</span>
+                    @endif
+                    <br>
+                    <br>
                     <input type="submit" class="btn btn-success" value="อนุมัติกิจกรรม">
             </form>
         </div>
