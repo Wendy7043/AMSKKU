@@ -29,7 +29,7 @@
                     <td>{{$data->activityStartDate}}</td>
                     <td><a class="btn btn-secondary" href="/activityFile/download/{{$data->activityFile}}">ดาวน์โหลด</a></td>
                     <td>{{$data->activityStatusName}}</td>
-                    <td><a class="btn btn-warning" href="">ดูรายละเอียด</a>
+                    <td><a class="btn btn-warning" href="/Director_Dormitory_Service_Division/manageActivity/activityDetail/{{$data->activityId}}">ดูรายละเอียด</a>
                     <a class="btn btn-success" href="/Director_Dormitory_Service_Division/approveActivity/approve/{{$data->activityId}}">อนุมัติกิจกรรม</a>
                     <a class="btn btn-danger" href="/Director_Dormitory_Service_Division/approveActivity/notApprove/{{$data->activityId}}">ไม่อนุมัติกิจกรรม</a></td>
                     

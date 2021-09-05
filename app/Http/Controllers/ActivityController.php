@@ -21,10 +21,6 @@ class ActivityController extends Controller
         return view('auth.Activity.createActivityHead_Information_Unit');
     }
 
-    
-
-
-
 
     public function manageActivityDormitory_Chairman()
     {
@@ -96,15 +92,15 @@ class ActivityController extends Controller
     public function submitCreateActivityDormitory_Director(Request $request)
     {
         $request->validate([
-            'activityName'=>'required | max:50',
-            'activityType'=>'required | max:50',
-            'activityPlace'=>'required | max:50',
-            'activityResponsible'=>'required | max:50',
-            'activityStartDate'=>'required ',
-            'activityEndDate'=>'required ',
-            'activityTarget'=>'required ',
-            'activityBudget'=>'required ',
-            'activityFile'=>'required '
+            'activityName' => 'required | max:50',
+            'activityType' => 'required | max:50',
+            'activityPlace' => 'required | max:50',
+            'activityResponsible' => 'required | max:50',
+            'activityStartDate' => 'required ',
+            'activityEndDate' => 'required ',
+            'activityTarget' => 'required ',
+            'activityBudget' => 'required ',
+            'activityFile' => 'required '
         ]);
 
         $data = new Activity;
@@ -123,23 +119,24 @@ class ActivityController extends Controller
         $data->activityTarget = $request->activityTarget;
         $data->activityBudget = $request->activityBudget;
         $data->activityStatus = 1;
-        $data->activityStatusName ='รอประธานหอพักอนุมัติ';
+        $data->activityStatusName = 'รอประธานหอพักอนุมัติ';
         $data->save();
-        return back()->with('post_update','สร้างกิจกรรมสำเร็จ');
+        return back()->with('post_update', 'สร้างกิจกรรมสำเร็จ');
     }
 
     public function submitCreateActivityDormitory_Chairman(Request $request)
-    {   $request->validate([
-        'activityName'=>'required | max:50',
-        'activityType'=>'required | max:50',
-        'activityPlace'=>'required | max:50',
-        'activityResponsible'=>'required | max:50',
-        'activityStartDate'=>'required ',
-        'activityEndDate'=>'required ',
-        'activityTarget'=>'required ',
-        'activityBudget'=>'required ',
-        'activityFile'=>'required '
-    ]);
+    {
+        $request->validate([
+            'activityName' => 'required | max:50',
+            'activityType' => 'required | max:50',
+            'activityPlace' => 'required | max:50',
+            'activityResponsible' => 'required | max:50',
+            'activityStartDate' => 'required ',
+            'activityEndDate' => 'required ',
+            'activityTarget' => 'required ',
+            'activityBudget' => 'required ',
+            'activityFile' => 'required '
+        ]);
 
         $data = new Activity;
         if ($request->file('activityFile')) {
@@ -157,23 +154,23 @@ class ActivityController extends Controller
         $data->activityTarget = $request->activityTarget;
         $data->activityBudget = $request->activityBudget;
         $data->activityStatus = 2;
-        $data->activityStatusName ='รอที่ปรึกษาหอพักอนุมัติ';
+        $data->activityStatusName = 'รอที่ปรึกษาหอพักอนุมัติ';
         $data->save();
-        return back()->with('post_update','สร้างกิจกรรมสำเร็จ');
+        return back()->with('post_update', 'สร้างกิจกรรมสำเร็จ');
     }
 
     public function submitCreateActivityHead_Information_Unit(Request $request)
     {
         $request->validate([
-            'activityName'=>'required | max:50',
-            'activityType'=>'required | max:50',
-            'activityPlace'=>'required | max:50',
-            'activityResponsible'=>'required | max:50',
-            'activityStartDate'=>'required ',
-            'activityEndDate'=>'required ',
-            'activityTarget'=>'required ',
-            'activityBudget'=>'required ',
-            'activityFile'=>'required '
+            'activityName' => 'required | max:50',
+            'activityType' => 'required | max:50',
+            'activityPlace' => 'required | max:50',
+            'activityResponsible' => 'required | max:50',
+            'activityStartDate' => 'required ',
+            'activityEndDate' => 'required ',
+            'activityTarget' => 'required ',
+            'activityBudget' => 'required ',
+            'activityFile' => 'required '
         ]);
 
         $data = new Activity;
@@ -192,11 +189,11 @@ class ActivityController extends Controller
         $data->activityTarget = $request->activityTarget;
         $data->activityBudget = $request->activityBudget;
         $data->activityStatus = 5;
-        $data->activityStatusName ='สร้างโดยกองบริการหอพัก';
+        $data->activityStatusName = 'สร้างโดยกองบริการหอพัก';
         $data->save();
-        return back()->with('post_update','สร้างกิจกรรมสำเร็จ');
+        return back()->with('post_update', 'สร้างกิจกรรมสำเร็จ');
     }
- 
+
 
 
     public function manageActivityDormitory_Director()
@@ -257,11 +254,11 @@ class ActivityController extends Controller
 
 
 
-    
+
     public function submitApproveDormitory_Chairman(Request $request)
     {
         $request->validate([
-            'activityFile'=>'required '
+            'activityFile' => 'required '
         ]);
 
         if ($request->file('activityFile')) {
@@ -272,7 +269,7 @@ class ActivityController extends Controller
                 'activityFile' => $filename
             ]);
         }
-        $status =2;
+        $status = 2;
         $activityStatusName = 'รอที่ปรึกษาหอพักอนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
@@ -283,14 +280,14 @@ class ActivityController extends Controller
 
     public function submitNotApproveDormitory_Chairman(Request $request)
     {
-        $status =0;
+        $status = 0;
         $activityStatusName = 'ประธานหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
-            'activityAdvice' => $request-> activityAdvice,
+            'activityAdvice' => $request->activityAdvice,
             'activityStatusName' => $activityStatusName
         ]);
-        
+
 
         return back()->with('post_update', 'ไม่อนุมัติสำเร็จแล้ว');
     }
@@ -298,7 +295,7 @@ class ActivityController extends Controller
     public function submitApproveDormitory_Counselor(Request $request)
     {
         $request->validate([
-            'activityFile'=>'required '
+            'activityFile' => 'required '
         ]);
         if ($request->file('activityFile')) {
             $activityFile = $request->file('activityFile');
@@ -308,7 +305,7 @@ class ActivityController extends Controller
                 'activityFile' => $filename
             ]);
         }
-        $status =3;
+        $status = 3;
         $activityStatusName = 'รอหัวหน้าหน่วยบริการหอพักอนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
@@ -319,11 +316,11 @@ class ActivityController extends Controller
 
     public function submitNotApproveDormitory_Counselor(Request $request)
     {
-        $status =0;
+        $status = 0;
         $activityStatusName = 'ที่ปรึกษาหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
-            'activityAdvice' => $request-> activityAdvice,
+            'activityAdvice' => $request->activityAdvice,
             'activityStatusName' => $activityStatusName
         ]);
         return back()->with('post_update', 'ไม่อนุมัติสำเร็จแล้ว');
@@ -332,7 +329,7 @@ class ActivityController extends Controller
     public function submitApproveHead_Dormitory_Service(Request $request)
     {
         $request->validate([
-            'activityFile'=>'required '
+            'activityFile' => 'required '
         ]);
         if ($request->file('activityFile')) {
             $activityFile = $request->file('activityFile');
@@ -342,7 +339,7 @@ class ActivityController extends Controller
                 'activityFile' => $filename
             ]);
         }
-        $status =4;
+        $status = 4;
         $activityStatusName = 'รอผู้อำนวยการกองบริการหอพักอนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
@@ -352,20 +349,20 @@ class ActivityController extends Controller
     }
     public function submitNotApproveHead_Dormitory_Service(Request $request)
     {
-        $status =0;
+        $status = 0;
         $activityStatusName = 'หัวหน้าหน่วยบริการหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
-            'activityAdvice' => $request-> activityAdvice,
+            'activityAdvice' => $request->activityAdvice,
             'activityStatusName' => $activityStatusName
         ]);
         return back()->with('post_update', 'ไม่อนุมัติสำเร็จแล้ว');
     }
-    
-    public function submitApproveDirector_Dormitory_Service_Division (Request $request)
+
+    public function submitApproveDirector_Dormitory_Service_Division(Request $request)
     {
         $request->validate([
-            'activityFile'=>'required '
+            'activityFile' => 'required '
         ]);
         if ($request->file('activityFile')) {
             $activityFile = $request->file('activityFile');
@@ -375,7 +372,7 @@ class ActivityController extends Controller
                 'activityFile' => $filename
             ]);
         }
-        $status =5;
+        $status = 5;
         $activityStatusName = 'อนุมัติสำเร็จ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
@@ -386,11 +383,11 @@ class ActivityController extends Controller
 
     public function submitNotApproveDirector_Dormitory_Service_Division(Request $request)
     {
-        $status =0;
+        $status = 0;
         $activityStatusName = 'ผู้อำนวยการกองบริการหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
             'activityStatus' => $status,
-            'activityAdvice' => $request-> activityAdvice,
+            'activityAdvice' => $request->activityAdvice,
             'activityStatusName' => $activityStatusName
         ]);
         return back()->with('post_update', 'ไม่อนุมัติสำเร็จแล้ว');
@@ -443,100 +440,8 @@ class ActivityController extends Controller
         return view('auth.Activity.editActivity_Dormitory_Director', compact('Activity'));
     }
 
-    public function submitEditActivity_Dormitory_Director (Request $request)
-    {
-        if ($request->file('activityFile')) {
-            $activityFile = $request->file('activityFile');
-            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
-            $request->activityFile->move('storage/', $filename);
-            DB::table('activities')->where('activityId', $request->activityId)->update([
-                'activityFile' => $filename
-            ]);
-        }
-        $activityName = $request->file('activityName');
-        $activityType = $request->file('activityType');
-        $activityPlace = $request->file('activityPlace');
-        $activityResponsible = $request->file('activityResponsible');
-        $activityStartDate = $request->file('activityStartDate');
-        $activityEndDate = $request->file('activityEndDate');
-        $activityTarget = $request->file('activityTarget');
-        $activityBudget = $request->file('activityBudget');
-        DB::table('activities')->where('activityId', $request->activityId)->update([
-            'activityName' => $activityName,
-            'activityType' =>  $activityType,
-            'activityPlace' => $activityPlace,
-            'activityResponsible' =>  $activityResponsible,
-            'activityStartDate' => $activityStartDate,
-            'activityEndDate' => $activityEndDate,
-            'activityTarget' =>  $activityTarget,
-            'activityBudget' => $activityBudget
-        ]);
-        return back()->with('post_update', 'แก้ไขสำเร็จแล้ว');
-    }
 
-    public function submitEditActivity_Dormitory_Chairman (Request $request)
-    {
-        if ($request->file('activityFile')) {
-            $activityFile = $request->file('activityFile');
-            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
-            $request->activityFile->move('storage/', $filename);
-            DB::table('activities')->where('activityId', $request->activityId)->update([
-                'activityFile' => $filename
-            ]);
-        }
-        $activityName = $request->file('activityName');
-        $activityType = $request->file('activityType');
-        $activityPlace = $request->file('activityPlace');
-        $activityResponsible = $request->file('activityResponsible');
-        $activityStartDate = $request->file('activityStartDate');
-        $activityEndDate = $request->file('activityEndDate');
-        $activityTarget = $request->file('activityTarget');
-        $activityBudget = $request->file('activityBudget');
-        DB::table('activities')->where('activityId', $request->activityId)->update([
-            'activityName' => $activityName,
-            'activityType' =>  $activityType,
-            'activityPlace' => $activityPlace,
-            'activityResponsible' =>  $activityResponsible,
-            'activityStartDate' => $activityStartDate,
-            'activityEndDate' => $activityEndDate,
-            'activityTarget' =>  $activityTarget,
-            'activityBudget' => $activityBudget
-        ]);
-        return back()->with('post_update', 'แก้ไขสำเร็จแล้ว');
-    }
-
-    public function submitEditActivity_Head_Information_Unit (Request $request)
-    {
-        if ($request->file('activityFile')) {
-            $activityFile = $request->file('activityFile');
-            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
-            $request->activityFile->move('storage/', $filename);
-            DB::table('activities')->where('activityId', $request->activityId)->update([
-                'activityFile' => $filename
-            ]);
-        }
-        $activityName = $request->file('activityName');
-        $activityType = $request->file('activityType');
-        $activityPlace = $request->file('activityPlace');
-        $activityResponsible = $request->file('activityResponsible');
-        $activityStartDate = $request->file('activityStartDate');
-        $activityEndDate = $request->file('activityEndDate');
-        $activityTarget = $request->file('activityTarget');
-        $activityBudget = $request->file('activityBudget');
-        DB::table('activities')->where('activityId', $request->activityId)->update([
-            'activityName' => $activityName,
-            'activityType' =>  $activityType,
-            'activityPlace' => $activityPlace,
-            'activityResponsible' =>  $activityResponsible,
-            'activityStartDate' => $activityStartDate,
-            'activityEndDate' => $activityEndDate,
-            'activityTarget' =>  $activityTarget,
-            'activityBudget' => $activityBudget
-        ]);
-        return back()->with('post_update', 'แก้ไขสำเร็จแล้ว');
-    }
-
-    public function deleteActivity_Dormitory_Chairman (Request $request)
+    public function deleteActivity_Dormitory_Chairman(Request $request)
     {
         DB::table('activities')->where('activityId', $request->activityId)->delete();
         return back()->with('post_delete', 'ลบสำเร็จแล้ว');
@@ -563,14 +468,134 @@ class ActivityController extends Controller
         $file = Activity::all();
         return view('auth.Activity.manageActivityFellDormitory_Director', compact('file'));
     }
+
+    public function submitCreateActivityOutlineDormitory_Director(Request $request)
+    {
+        $request->validate([
+            'activityName' => 'required | max:50',
+        ]);
+
+        $data = new Activity;
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $activityFile = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $activityFile);
+            $data->activityFile = $activityFile;
+        }
+        $data->activityName = $request->activityName;
+        $data->activityType = $request->activityType;
+        $data->activityPlace = $request->activityPlace;
+        $data->activityResponsible = $request->activityResponsible;
+        $data->activityStartDate = $request->activityStartDate;
+        $data->activityEndDate = $request->activityEndDate;
+        $data->activityTarget = $request->activityTarget;
+        $data->activityBudget = $request->activityBudget;
+        $data->activityStatus = 6;
+        $data->activityStatusName = 'เค้าโครงร่างกิจกรรม';
+        $data->save();
+        return back()->with('post_update', 'บันทึกเค้าโครงร่างกิจกรรมสำเร็จ');
+    }
+
+
+    public function submitEditActivity_DormitorsubmitCreateActivityOutlineEditActivityDormitory_Directory_Director(Request $request)
+    {
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
+            ]);
+        }
+        $activityStatus = 1;
+        $activityStatusName = 'รอประธานหอพักอนุมัติ';
+
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityName' => $request->activityName,
+            'activityType' =>  $request->activityType,
+            'activityPlace' => $request->activityPlace,
+            'activityResponsible' =>  $request->activityResponsible,
+            'activityStartDate' => $request->activityStartDate,
+            'activityEndDate' => $request->activityEndDate,
+            'activityTarget' =>  $request->activityTarget,
+            'activityBudget' => $request->activityBudget,
+            'activityStatus' =>  $activityStatus,
+            'activityStatusName' => $activityStatusName
+        ]);
+        return back()->with('post_update', 'สร้างกิจกรรมสำเร็จแล้ว');
+    }
+
+
+
+    public function submitsaveActivityOutlineEditActivityDormitory_Director(Request $request)
+    {
+        if ($request->file('activityFile')) {
+            $activityFile = $request->file('activityFile');
+            $filename = time() . '.' . $activityFile->getClientOriginalExtension();
+            $request->activityFile->move('storage/', $filename);
+            DB::table('activities')->where('activityId', $request->activityId)->update([
+                'activityFile' => $filename
+            ]);
+        }
+
+        $activityStatus = 6;
+        $activityStatusName = 'เค้าโครงร่างกิจกรรม';;
+        DB::table('activities')->where('activityId', $request->activityId)->update([
+            'activityName' => $request->activityName,
+            'activityType' =>  $request->activityType,
+            'activityPlace' => $request->activityPlace,
+            'activityResponsible' =>  $request->activityResponsible,
+            'activityStartDate' => $request->activityStartDate,
+            'activityEndDate' => $request->activityEndDate,
+            'activityTarget' =>  $request->activityTarget,
+            'activityBudget' => $request->activityBudget,
+            'activityStatus' =>  $activityStatus,
+            'activityStatusName' => $activityStatusName
+        ]);
+        return back()->with('post_update', 'บันทึกเค้าโครงร่างกิจกรรมสำเร็จ');
+    }
+
+
+    public function activityDetailStudent($activityId)
+    {
+        $file = Activity::all();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.activityDetailStudent', compact('Activity'));
+    }
     public function activityDetailDormitory_Director($activityId)
     {
         $file = Activity::all();
         $Activity = DB::table('activities')->where('activityId', $activityId)->first();
         return view('auth.Activity.activityDetailDormitory_Director', compact('Activity'));
     }
-
-
-    
-
+    public function activityDetailDormitory_Chairman($activityId)
+    {
+        $file = Activity::all();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.activityDetailDormitory_Chairman', compact('Activity'));
+    }
+    public function activityDetailDormitory_Counselor($activityId)
+    {
+        $file = Activity::all();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.activityDetailDormitory_Counselor', compact('Activity'));
+    }
+    public function activityDetailHead_Dormitory_Service($activityId)
+    {
+        $file = Activity::all();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.activityDetailHead_Dormitory_Service', compact('Activity'));
+    }
+    public function activityDetailDirector_Dormitory_Service_Division($activityId)
+    {
+        $file = Activity::all();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.activityDetailDirector_Dormitory_Service_Division', compact('Activity'));
+    }
+    public function activityDetailHead_Information_Unit($activityId)
+    {
+        $file = Activity::all();
+        $Activity = DB::table('activities')->where('activityId', $activityId)->first();
+        return view('auth.Activity.activityDetailHead_Information_Unit', compact('Activity'));
+    }
 }

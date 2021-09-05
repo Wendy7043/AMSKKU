@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <form action="/Dormitory_Chairman/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
+            <form action="/Director_Dormitory_Service_Division/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                
@@ -25,8 +25,6 @@
                     <input class="form-control" type="text" name="activityTarget" value="{{$Activity->activityTarget}}" readonly><br>
                     งบประมาณที่ใช้ดำเนินโครงการ
                     <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
-                    <input class="form-control" type="file" name="activityFile" value="{{$Activity->activityFile}}"><br><br><br>
-                    <input type="submit" class="btn btn-success" value="อนุมัติกิจกรรม">
             </form>
         </div>
     </div>
