@@ -27,8 +27,8 @@
                     <td>{{$data->activityStartDate}}</td>
                     <td><a class="btn btn-secondary" href="/activityFile/download/{{$data->activityFile}}">ดาวน์โหลด</a></td>
                     <td>{{$data->activityStatusName}}</td>
-                    <td><a class="btn btn-warning" href="">ดูรายละเอียด</a>
-                    <a class="btn btn-success" href="/Dormitory_Chairman/showActivityAdvice/{{$data->activityId}}">ดำเนินกิจกรรม</a>
+                    <td><a class="btn btn-warning" href="/Dormitory_Director/manageActivity/activityDetail/{{$data->activityId}}">ดูรายละเอียด</a>
+                    <a class="btn btn-success" href="/Dormitory_Director/showActivityAdvice/{{$data->activityId}}">ดำเนินกิจกรรม</a>
                     
 
                 </tbody>

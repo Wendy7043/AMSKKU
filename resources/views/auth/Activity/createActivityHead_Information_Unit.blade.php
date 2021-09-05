@@ -4,13 +4,21 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <form action="/Head_Information_Unit/createActivity/Submit" method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                     <input type="text" name="activityName" class="form-control" placeholder="ชื่อโครงการ">
-                    <span class="text-danger"> @error("activityName"){{$message}}@enderror </span><br>
-                    <input type="text" name="activityType" class="form-control" placeholder="ลักษณะโครงการ"><br>
+                    <span class="text-danger"> @error("activityName"){{$message}}@enderror </span><br><br>
+                    <select class="custom-select" name="activityType" class="form-control">
+                        <option selected>ลักษณะโครงการ</option>
+                        <option value=" ด้านการพัฒนาศักยภาพตนเอง"> ด้านการพัฒนาศักยภาพตนเอง</option>
+                        <option value="ด้านการเสริมสร้างจิตสำนึกและความภาคภูมิใจในสถาบัน">ด้านการเสริมสร้างจิตสำนึกและความภาคภูมิใจในสถาบัน</option>
+                        <option value=" ด้านการสร้างเสริมจิตสาธารณะ การธำรงไว้ซึ่งสถาบัน ชาติ ศาสนา พระมหากษัตริย์ และประชาคมโลก"> ด้านการสร้างเสริมจิตสาธารณะ การธำรงไว้ซึ่งสถาบัน ชาติ ศาสนา พระมหากษัตริย์ และประชาคมโลก</option>
+                        <option value=" ด้านการสร้างเสริมคุณธรรมและจริยธรรม"> ด้านการสร้างเสริมคุณธรรมและจริยธรรม</option>
+                        <option value="  ด้านการอนุรักษ์ ศิลปะวัฒนธรรมไทย และภูมิปัญญาท้องถิ่น"> ด้านการอนุรักษ์ ศิลปะวัฒนธรรมไทย และภูมิปัญญาท้องถิ่น</option>
+                    </select><br><br>
                     <span class="text-danger"> @error("activityType"){{$message}}@enderror </span><br>
+
                     <input type="text" name="activityPlace" class="form-control" placeholder="สถานที่ปฏิบัติงาน"><br>
                     <span class="text-danger"> @error("activityPlace"){{$message}}@enderror </span><br>
                     <input type="text" name="activityResponsible" class="form-control" placeholder="หน่วยงานที่รับผิดชอบโครงการ"><br>
@@ -32,9 +40,8 @@
                     @endif
                     <br>
                     <br>
-                    <input type="submit" class="btn btn-success" value="สร้างกิจกรรม">
-                    <input type="submit" class="btn btn-warning" value="บันทึกร่างโครงการ">
-
+                    <input type="submit" class="btn btn-success" value="สร้างกิจกรรม" formaction="{{url('/Head_Information_Unit/createActivity/Submit')}}">
+                    <input type="submit" class="btn btn-warning" value="บันทึกร่างโครงการ" formaction="{{url('/Head_Information_Unit/createActivity/Outline/Submit')}}">
             </form>
         </div>
     </div>
