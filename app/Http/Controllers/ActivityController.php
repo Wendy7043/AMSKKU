@@ -92,10 +92,10 @@ class ActivityController extends Controller
     public function submitCreateActivityDormitory_Director(Request $request)
     {
         $request->validate([
-            'activityName' => 'required | max:50',
-            'activityType' => 'required | max:50',
-            'activityPlace' => 'required | max:50',
-            'activityResponsible' => 'required | max:50',
+            'activityName' => 'required ',
+            'activityType' => 'required ',
+            'activityPlace' => 'required ',
+            'activityResponsible' => 'required',
             'activityStartDate' => 'required ',
             'activityEndDate' => 'required ',
             'activityTarget' => 'required ',
@@ -127,10 +127,10 @@ class ActivityController extends Controller
     public function submitCreateActivityDormitory_Chairman(Request $request)
     {
         $request->validate([
-            'activityName' => 'required | max:50',
-            'activityType' => 'required | max:50',
-            'activityPlace' => 'required | max:50',
-            'activityResponsible' => 'required | max:50',
+            'activityName' => 'required ',
+            'activityType' => 'required ',
+            'activityPlace' => 'required ',
+            'activityResponsible' => 'required',
             'activityStartDate' => 'required ',
             'activityEndDate' => 'required ',
             'activityTarget' => 'required ',
@@ -162,10 +162,10 @@ class ActivityController extends Controller
     public function submitCreateActivityHead_Information_Unit(Request $request)
     {
         $request->validate([
-            'activityName' => 'required | max:50',
-            'activityType' => 'required | max:50',
-            'activityPlace' => 'required | max:50',
-            'activityResponsible' => 'required | max:50',
+            'activityName' => 'required ',
+            'activityType' => 'required ',
+            'activityPlace' => 'required ',
+            'activityResponsible' => 'required',
             'activityStartDate' => 'required ',
             'activityEndDate' => 'required ',
             'activityTarget' => 'required ',
@@ -280,6 +280,9 @@ class ActivityController extends Controller
 
     public function submitNotApproveDormitory_Chairman(Request $request)
     {
+        $request->validate([
+            'activityAdvice' => 'required '
+        ]);
         $status = 0;
         $activityStatusName = 'ประธานหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
@@ -316,6 +319,9 @@ class ActivityController extends Controller
 
     public function submitNotApproveDormitory_Counselor(Request $request)
     {
+        $request->validate([
+            'activityAdvice' => 'required '
+        ]);
         $status = 0;
         $activityStatusName = 'ที่ปรึกษาหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
@@ -349,6 +355,9 @@ class ActivityController extends Controller
     }
     public function submitNotApproveHead_Dormitory_Service(Request $request)
     {
+        $request->validate([
+            'activityAdvice' => 'required '
+        ]);
         $status = 0;
         $activityStatusName = 'หัวหน้าหน่วยบริการหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([
@@ -383,6 +392,9 @@ class ActivityController extends Controller
 
     public function submitNotApproveDirector_Dormitory_Service_Division(Request $request)
     {
+        $request->validate([
+            'activityAdvice' => 'required '
+        ]);
         $status = 0;
         $activityStatusName = 'ผู้อำนวยการกองบริการหอพักไม่อนุมัติ';
         DB::table('activities')->where('activityId', $request->activityId)->update([

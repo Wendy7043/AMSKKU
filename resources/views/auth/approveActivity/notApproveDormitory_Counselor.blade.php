@@ -26,7 +26,8 @@
                     งบประมาณที่ใช้ดำเนินโครงการ
                     <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
                     เหตุผลที่ไม่อนุมัติ<br>
-                    <textarea class="form-control" name="activityAdvice" rows="3"></textarea><br><br><br>
+                    <textarea class="form-control" name="activityAdvice" rows="3"></textarea>
+                    <span class="text-danger"> @error("activityAdvice"){{$message}}@enderror </span><br><br><br>
                     @if(Session::has('post_update'))
                     <span>{{Session::get('post_update')}}</span>
                     @endif
