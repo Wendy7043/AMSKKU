@@ -1,6 +1,7 @@
 @extends('layouts.appHead_Dormitory_Service')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

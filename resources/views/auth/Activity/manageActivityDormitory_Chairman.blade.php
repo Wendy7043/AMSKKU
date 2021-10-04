@@ -1,6 +1,10 @@
 @extends('layouts.appDormitory_Chairman')
 
 @section('content')
+<div class="col-sm-6">
+    <h3>   จัดการกิจกรรม 
+    </h3>
+</div><br>
 <a class="btn btn-success" href="/Dormitory_Chairman/createActivity">สร้างกิจกรรม</a>
 <div class="row ">
     <div class="col-2">

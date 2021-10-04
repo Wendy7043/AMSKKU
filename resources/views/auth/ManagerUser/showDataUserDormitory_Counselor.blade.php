@@ -1,6 +1,13 @@
 @extends('layouts.appDormitory_Counselor')
 
 @section('content')
+<div class="col-sm-6">
+    <h3>   ข้อมูลผู้ใช้ -
+        <a >
+            {{ Auth::user()->name }}
+        </a>
+    </h3>
+</div><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

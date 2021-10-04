@@ -1,6 +1,10 @@
 @extends('layouts.appHead_Information_Unit')
 
 @section('content')
+<div class="col-sm-6">
+    <h3>   จัดการกิจกรรม 
+    </h3>
+</div><br>
 <a class="btn btn-success" href="/Head_Information_Unit/createActivity">สร้างกิจกรรม</a>
 <div class="row ">
     <div class="col-2">

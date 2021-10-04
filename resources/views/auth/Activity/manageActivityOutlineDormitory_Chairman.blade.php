@@ -1,6 +1,10 @@
 @extends('layouts.appDormitory_Chairman')
 
 @section('content')
+<div class="col-sm-6">
+    <h3>   จัดการกิจกรรม 
+    </h3>
+</div><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
