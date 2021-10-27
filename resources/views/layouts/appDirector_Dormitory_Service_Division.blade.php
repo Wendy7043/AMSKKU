@@ -44,7 +44,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/Dormitory_Director/home" class="nav-link">หน้าหลัก</a>
+        <a href="/Director_Dormitory_service_Division/home" class="nav-link">หน้าหลัก</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">ติดต่อเรา</a>
@@ -100,7 +100,7 @@
                       </form>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/showDataUser" class="nav-link">
+                  <a href="/Director_Dormitory_service_Division/showDataUser" class="nav-link">
                     <i class="nav-icon far"><ion-icon name="person-circle-outline"></ion-icon></i>
                     <p>
                       ข้อมูลนักศึกษา
@@ -108,7 +108,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/showDataActivity" class="nav-link">
+                  <a href="/Director_Dormitory_service_Division/showDataActivity" class="nav-link">
                     <i class="nav-icon far"><ion-icon name="newspaper-outline"></ion-icon></ion-icon></i>
                     <p>
                       ข้อมูลกิจกรรม
@@ -116,7 +116,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/manageActivity" class="nav-link">
+                  <a href="/Director_Dormitory_service_Division/manageActivity" class="nav-link">
                   <i class="nav-icon far"><ion-icon name="settings-outline"></ion-icon></ion-icon></i>
                     <p>
                       จัดการกิจกรรม
@@ -132,7 +132,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/changePassword" class="nav-link">
+                  <a href="/Director_Dormitory_service_Divisionr/changePassword" class="nav-link">
                   <i class="nav-icon far"><ion-icon name="lock-closed-outline"></ion-icon></i>
                     <p>
                       เปลี่ยนรหัสผ่าน

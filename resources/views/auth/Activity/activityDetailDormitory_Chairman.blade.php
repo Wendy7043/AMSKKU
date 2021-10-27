@@ -7,9 +7,9 @@
             <form action="/Director_Dormitory_Service_Division/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
-               
-                <input class="form-control" type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
-                 ชื่อโครงการ
+                    ลำดับกิจกรรม
+                    <input class="form-control" type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
+                    ชื่อโครงการ
                     <input class="form-control" type="text" name="activityName" value="{{$Activity->activityName}}" readonly><br>
                     ลักษณะโครงการ 
                     <input class="form-control" type="text" name="activityType" value="{{$Activity->activityType}}" readonly><br>
@@ -26,6 +26,8 @@
                     งบประมาณที่ใช้ดำเนินโครงการ
                     <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
             </form>
+                <a class="btn btn-warning" href="/Dormitory_Chairman/approveActivity/approve">อนุมัติ</a>
+                <a class="btn btn-danger" href="/Dormitory_Chairman/approveActivity/notApprove">ไม่อนุมัติ</a>
         </div>
     </div>
 </div>

@@ -1,47 +1,69 @@
 @extends('layouts.appDirector_Dormitory_Service_Division')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                    <br>
-                    ผู้อำนวยการกองบริการหอพัก
-                </div>
-            </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>ยินดีต้อนรับ -
+                <a >
+                    {{ Auth::user()->name }}
+                </a>
+            </h1><br>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li> -->
+              <!-- <li class="breadcrumb-item active">Calendar</li> -->
+            </ol>
+          </div>
         </div>
-        </div><br>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('ปฏิทินกิจกรรม') }}</div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-                <div class="card-body">
-
-                </div>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar"></div>
+              </div>
+              <!-- /.card-body -->
             </div>
-        </div>
-    </div><br>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('กิจกรรมใหม่') }}</div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
 
-                <div class="card-body">
-
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">กิจกรรมใหม่</h4>
                 </div>
+                <div class="card-body">
+                  <!-- the events -->
+                  <div id="external-events">
+                    
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+              
             </div>
+          </div>
+          <!-- /.col -->
         </div>
-    </div>
-</div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 @endsection

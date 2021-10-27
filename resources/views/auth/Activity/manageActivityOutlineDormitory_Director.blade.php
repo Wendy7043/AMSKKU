@@ -5,11 +5,11 @@
     <h3>   จัดการกิจกรรม 
     </h3>
 </div><br>
-<a class="btn btn-success" href="/Dormitory_Director/createActivity">สร้างกิจกรรม</a>
 <div class="row ">
     <div class="col-2">
 
     </div>
+    <a class="btn btn-success" href="/Dormitory_Director/createActivity">สร้างกิจกรรม</a>
     <a class="btn btn-info" href="/Dormitory_Director/manageActivity">กิจกรรมที่กำลังดำเนินการ</a>
     <a class="btn btn-warning" href="/Dormitory_Director/manageActivity/Outline">เค้าโครงร่างกิจกรรม</a>
     <a class="btn btn-danger" href="/Dormitory_Director/manageActivity/Fell">กิจกรรมที่ไม่อนุมัติ</a>

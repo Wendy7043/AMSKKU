@@ -74,7 +74,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-light-success elevation-4">
     <!-- Brand Logo -->
-    <a href="/Dormitory_Director/home" class="brand-link">
+    <a href="/Dormitory_Counselor/home" class="brand-link">
       <img src="{{ asset('dist/img/LogoKKU-thai.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AMS KKU</span>
     </a>
@@ -100,7 +100,7 @@
                       </form>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/showDataUser" class="nav-link">
+                  <a href="/Dormitory_Counselor/showDataUser" class="nav-link">
                     <i class="nav-icon far"><ion-icon name="person-circle-outline"></ion-icon></i>
                     <p>
                       ข้อมูลนักศึกษา
@@ -108,7 +108,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/showDataActivity" class="nav-link">
+                  <a href="/Dormitory_Counselor/showDataActivity" class="nav-link">
                     <i class="nav-icon far"><ion-icon name="newspaper-outline"></ion-icon></ion-icon></i>
                     <p>
                       ข้อมูลกิจกรรม
@@ -116,7 +116,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/manageActivity" class="nav-link">
+                  <a href="/Dormitory_Counselor/manageActivity" class="nav-link">
                   <i class="nav-icon far"><ion-icon name="settings-outline"></ion-icon></ion-icon></i>
                     <p>
                       จัดการกิจกรรม
@@ -124,7 +124,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/showDataStudentAll" class="nav-link">
+                  <a href="/Dormitory_Counselor/showDataStudentAll" class="nav-link">
                   <i class="nav-icon far"><ion-icon name="people-outline"></ion-icon></ion-icon></i>
                     <p>
                       รายชื่อนักศึกษา
@@ -132,7 +132,7 @@
                   </a>
           </li>
           <li class="nav-item">
-                  <a href="/Dormitory_Director/changePassword" class="nav-link">
+                  <a href="/Dormitory_Counselor/changePassword" class="nav-link">
                   <i class="nav-icon far"><ion-icon name="lock-closed-outline"></ion-icon></i>
                     <p>
                       เปลี่ยนรหัสผ่าน

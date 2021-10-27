@@ -26,6 +26,8 @@
                     งบประมาณที่ใช้ดำเนินโครงการ
                     <input class="form-control" type="text" name="activityBudget" value="{{$Activity->activityBudget}}" readonly><br>
             </form>
+                <a class="btn btn-warning" href="/Dormitory_Director/manageActivity/Outline">อนุมัติ</a>
+                <a class="btn btn-danger" href="/Dormitory_Director/manageActivity/Fell">ไม่อนุมัติ</a>
         </div>
     </div>
 </div>

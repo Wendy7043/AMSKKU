@@ -73,6 +73,10 @@ body {
   outline: 0 !important;
 }
 
+.Right-Main-content {
+  margin-right:3cm;
+}
+
 hr {
   box-sizing: content-box;
   height: 0;

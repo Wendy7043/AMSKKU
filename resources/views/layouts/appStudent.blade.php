@@ -66,7 +66,6 @@
                     <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
                 </svg>
             </a>
-        </li>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -76,10 +75,16 @@
     <!-- Brand Logo -->
     <a href="/Student/home" class="brand-link">
       <img src="{{ asset('dist/img/LogoKKU-thai.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AMS KKU</span>
+      <span class="brand-text font-weight-light"><h3>AMS KKU</h3></span>
     </a>
-    
-
+  
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <h4>นักศึกษา</h4>
+      </div>
+      
       <!-- Sidebar Menu -->
     <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

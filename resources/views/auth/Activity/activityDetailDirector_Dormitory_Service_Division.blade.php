@@ -7,9 +7,10 @@
             <form action="/Director_Dormitory_Service_Division/approveActivity/approve/submit" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
-               
-                <input class="form-control" type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
-                 ชื่อโครงการ
+                    
+                    ลำดับกิจกรรม
+                    <input class="form-control" type="text" name="activityId" value="{{$Activity->activityId}}" readonly><br>
+                    ชื่อโครงการ
                     <input class="form-control" type="text" name="activityName" value="{{$Activity->activityName}}" readonly><br>
                     ลักษณะโครงการ 
                     <input class="form-control" type="text" name="activityType" value="{{$Activity->activityType}}" readonly><br>
